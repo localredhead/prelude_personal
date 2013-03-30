@@ -13,7 +13,7 @@
 (scroll-bar-mode -1)
 (global-hl-line-mode)			; highlight current line
 (global-linum-mode 1)			; add line numbers on the left
-(setq word-wrap t)
+(global-visual-line-mode 1)
 (setq-default tab-width 2)
 (toggle-frame-maximized)
 (setq ring-bell-function 'ignore)
