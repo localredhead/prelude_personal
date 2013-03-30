@@ -1,6 +1,6 @@
 ;(set-frame-font "Liberation Mono-13")
-;(set-frame-font "Source Code Pro-13")
-(set-frame-font "Anonymous Pro-14")
+(set-frame-font "Source Code Pro-13")
+;(set-frame-font "Anonymous Pro-14")
 (setq utf-translate-cjk-mode nil)     ; disable CJK coding/encoding (Chinese/Japanese/Korean characters)
 (set-language-environment 'utf-8)  	  ; force everything to UTF-8
 (setq locale-coding-system 'utf-8)  	; so all character input is valid.
@@ -13,6 +13,7 @@
 (scroll-bar-mode -1)
 (global-hl-line-mode)			; highlight current line
 (global-linum-mode 1)			; add line numbers on the left
+(setq word-wrap t)
 (setq-default tab-width 2)
 (toggle-frame-maximized)
 (setq ring-bell-function 'ignore)
