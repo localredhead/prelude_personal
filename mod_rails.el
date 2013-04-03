@@ -65,6 +65,12 @@
 ;;install from github
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/emacs-spork"))
 (require 'emacs-spork)
+(setq es-use-tmux-pane nil)
+(setq es-use-emacs-buffer t)
+
+
+;;rspec
+(require 'rspec-mode)
 
 
 ;;rvm

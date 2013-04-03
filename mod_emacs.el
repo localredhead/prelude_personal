@@ -1,5 +1,5 @@
-;(set-frame-font "Liberation Mono-13")
-(set-frame-font "Source Code Pro-13")
+(set-frame-font "Liberation Mono-13")
+;(set-frame-font "Source Code Pro-13")
 ;(set-frame-font "Anonymous Pro-14")
 (setq utf-translate-cjk-mode nil)     ; disable CJK coding/encoding (Chinese/Japanese/Korean characters)
 (set-language-environment 'utf-8)  	  ; force everything to UTF-8
