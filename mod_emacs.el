@@ -1,5 +1,5 @@
-(set-frame-font "Liberation Mono-13")
-;(set-frame-font "Source Code Pro-13")
+;(set-frame-font "Liberation Mono-13")
+(set-frame-font "Source Code Pro-13")
 ;(set-frame-font "Anonymous Pro-14")
 (setq utf-translate-cjk-mode nil)     ; disable CJK coding/encoding (Chinese/Japanese/Korean characters)
 (set-language-environment 'utf-8)  	  ; force everything to UTF-8
@@ -12,11 +12,25 @@
 (column-number-mode 1)		; column numbers in the mode line
 (scroll-bar-mode -1)
 (global-hl-line-mode)			; highlight current line
+(highlight-changes-mode t); highlight changes
 (global-linum-mode 1)			; add line numbers on the left
 (global-visual-line-mode 1)
 (setq-default tab-width 2)
 (toggle-frame-maximized)
 (setq ring-bell-function 'ignore)
+
+;;git gutter
+;;install from melpa
+;; (require 'git-gutter-fringe)
+;; (setq git-gutter:update-threshold 2)
+;; (setq git-gutter:update-hooks '(after-save-hook after-revert-hook))
+;; (global-git-gutter-mode t)
+;; (setq git-gutter-fr:side 'right-fringe)
+
+;;diff-hl
+;;install from melpa
+(add-hook 'prog-mode-hook 'turn-on-diff-hl-mode)
+(add-hook 'vc-dir-mode-hook 'turn-on-diff-hl-mode)
 
 ;; Makes scrolling smoother.
 (setq redisplay-dont-pause t
@@ -26,13 +40,13 @@
       scroll-preserve-screen-position 1)
 
 ;;Navigate between emacs window panes.
-(global-set-key (kbd "S-<up>") 'windmove-up)
-(global-set-key (kbd "S-<down>") 'windmove-down)
-(global-set-key (kbd "S-<right>") 'windmove-right)
-(global-set-key (kbd "S-<left>") 'windmove-left)
+(global-set-key (kbd "M-<up>") 'windmove-up)
+(global-set-key (kbd "M-<down>") 'windmove-down)
+(global-set-key (kbd "M-<right>") 'windmove-right)
+(global-set-key (kbd "M-<left>") 'windmove-left)
 
 ;;ecb
-;;install from elpa 
+;;install from elpa
 (require 'ecb)
 (setq my-projects '("~/Projects"))
 (setq ecb-source-path my-projects)
@@ -42,8 +56,16 @@
 (setq ecb-layout-name "left7")   ; set directories buffer to display sources.
 (ecb-activate)
 
-;;; The following semantic references are needed 
-;;; to solve an issue with ECB. 
+;;sr-speedbar
+;; (require 'sr-speedbar)
+;; (sr-speedbar-open)
+;; (sr-speedbar-remember-window-width)
+
+;;nav
+;; (nav)
+
+;;; The following semantic references are needed
+;;; to solve an issue with ECB.
 (require 'semantic)
 (require 'semantic/analyze)
 (provide 'semantic-analyze)
@@ -70,10 +92,12 @@
 
 ;;ErgoEmacs
 ;; easy keys to split window. Key based on ErgoEmacs keybinding
-(global-set-key (kbd "M-3") 'delete-other-windows) ; expand current pane
+;(global-set-key (kbd "M-3") 'delete-other-windows) ; expand current pane
+(global-set-key (kbd "M-3") 'split-window-horizontally)
 (global-set-key (kbd "M-4") 'split-window-vertically) ; split pane top/bottom
 (global-set-key (kbd "M-s") 'other-window) ; cursor to other pane
 (global-set-key (kbd "M-0") 'delete-window) ; close current pane
+(global-set-key (kbd "M-1") 'delete-other-windows)
 
 
 (defalias 'list-buffers 'ibuffer) ;use ibuffer instead of list-buffer
