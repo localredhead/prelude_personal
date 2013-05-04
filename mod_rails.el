@@ -57,9 +57,8 @@
 
 ;;emacs-rails
 ;;install from remvee's github
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/rails-minor-mode"))
-(require 'rails)
-
+;; (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/rails-minor-mode"))
+;; (require 'rails)
 
 ;;emacs-spork
 ;;install from github
@@ -68,17 +67,14 @@
 (setq es-use-tmux-pane nil)
 (setq es-use-emacs-buffer t)
 
-
 ;;rspec
 (require 'rspec-mode)
-
 
 ;;rvm
 (require 'rvm)
 ;(rvm-use-default)
 (add-hook 'ruby-mode-hook
           (lambda () (rvm-activate-corresponding-ruby)))  ;make sure you have a .rvmrc file for the project! run rvm --rvmrc --create ruby@gemset
-
 
 ;;bundler
 ;;install from melpa

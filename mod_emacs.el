@@ -19,6 +19,23 @@
 (toggle-frame-maximized)
 (setq ring-bell-function 'ignore)
 
+;;autocomplete
+;;install using elpa
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20121203.832/dict")
+(ac-config-default)
+(ac-set-trigger-key "TAB")
+(global-auto-complete-mode t)
+
+;; eproject for usage in build-ctags helper.
+;; install from melpa
+(require 'eproject)
+
+;;Helm Cmd T
+;;install from melpa
+(require 'helm-cmd-t)
+(global-set-key (kbd "M-t") 'helm-cmd-t)
+
 ;;git gutter
 ;;install from melpa
 ;; (require 'git-gutter-fringe)
@@ -56,14 +73,6 @@
 (setq ecb-layout-name "left7")   ; set directories buffer to display sources.
 (ecb-activate)
 
-;;sr-speedbar
-;; (require 'sr-speedbar)
-;; (sr-speedbar-open)
-;; (sr-speedbar-remember-window-width)
-
-;;nav
-;; (nav)
-
 ;;; The following semantic references are needed
 ;;; to solve an issue with ECB.
 (require 'semantic)
@@ -80,12 +89,6 @@
 (semantic-mode 1)
 (global-ede-mode t)
 
-;;Icicles
-;;install from  melpa
-;; (require 'icicles)
-;; (icy-mode 1)
-;; (icicle-ido-like-mode t)
-
 ;;Ido
 ;;bundled with emacs
 (ido-mode 1)
@@ -98,7 +101,6 @@
 (global-set-key (kbd "M-s") 'other-window) ; cursor to other pane
 (global-set-key (kbd "M-0") 'delete-window) ; close current pane
 (global-set-key (kbd "M-1") 'delete-other-windows)
-
 
 (defalias 'list-buffers 'ibuffer) ;use ibuffer instead of list-buffer
 
