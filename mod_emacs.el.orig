@@ -50,28 +50,27 @@
 (add-hook 'vc-dir-mode-hook 'turn-on-diff-hl-mode)
 
 ;; Makes scrolling smoother.
-(setq redisplay-dont-pause t
-      scroll-margin 1
-      scroll-step 1
-      scroll-conservatively 10000
-      scroll-preserve-screen-position 1)
+
 
 ;;Navigate between emacs window panes.
-(global-set-key (kbd "M-<up>") 'windmove-up)
-(global-set-key (kbd "M-<down>") 'windmove-down)
-(global-set-key (kbd "M-<right>") 'windmove-right)
-(global-set-key (kbd "M-<left>") 'windmove-left)
+;; (global-set-key (kbd "M-<up>") 'windmove-up)
+;; (global-set-key (kbd "M-<down>") 'windmove-down)
+;; (global-set-key (kbd "M-<right>") 'windmove-right)
+;; (global-set-key (kbd "M-<left>") 'windmove-left)
+
+;; (global-set-key (kbd "<M-left>") 'ecb-goto-window-methods)
+;; (global-set-key (kbd "<M-right>") 'ecb-goto-window-edit1)
 
 ;;ecb
 ;;install from elpa
-;; (require 'ecb)
-;; (setq my-projects '("~/Projects"))
-;; (setq ecb-source-path my-projects)
-;; (setq stack-trace-on-error t)
-;; (ecb-byte-compile)
-;; (setq ecb-tip-of-the-day nil)
-;; (setq ecb-layout-name "left7")   ; set directories buffer to display sources.
-;; (ecb-activate)
+(require 'ecb)
+(setq my-projects '("~/Projects"))
+(setq ecb-source-path my-projects)
+(setq stack-trace-on-error t)
+(ecb-byte-compile)
+(setq ecb-tip-of-the-day nil)
+(setq ecb-layout-name "left7")   ; set directories buffer to display sources.
+(ecb-activate)
 
 ;;; The following semantic references are needed
 ;;; to solve an issue with ECB.

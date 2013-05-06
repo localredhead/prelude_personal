@@ -57,8 +57,8 @@
 
 ;;emacs-rails
 ;;install from remvee's github
-;; (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/rails-minor-mode"))
-;; (require 'rails)
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/rails-minor-mode"))
+(require 'rails)
 
 ;;emacs-spork
 ;;install from github
