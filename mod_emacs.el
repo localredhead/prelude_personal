@@ -20,6 +20,7 @@
 (setq ring-bell-function 'ignore)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
+(setq-default truncate-lines 1)
 
 ;;autocomplete
 ;;install using elpa
@@ -102,7 +103,7 @@
 
 ;;Idomenu.el
 ;;install from elpa
-(require 'idomenu)
+(autoload 'idomenu "idomenu" nil t)
 (defun ido-goto-symbol (&optional symbol-list)
       "Refresh imenu and jump to a place in the buffer using Ido."
       (interactive)
@@ -152,6 +153,7 @@
               (add-to-list 'name-and-pos (cons name position))))))))
 (global-set-key (kbd "M-j") 'ido-goto-symbol)
 (global-set-key [remap find-tag] 'helm-etags-select)
+()
 
 ;;ErgoEmacs
 ;; easy keys to split window. Key based on ErgoEmacs keybinding
