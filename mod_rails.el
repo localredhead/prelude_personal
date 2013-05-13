@@ -84,3 +84,4 @@
 ;;There is a problem with C-e inside inf-ruby processes and it crashes
 ;;the emacs process.  To avoid it, let the lines wrap.        
 (add-hook 'inf-ruby-mode-hook (lambda () (visual-line-mode 1)))
+(add-hook 'sql-interactive-mode-hook (lambda () (visual-line-mode 1)))
