@@ -21,6 +21,8 @@
 (ido-mode 1)
 (setq ido-enable-flex-matching t)
 (setq-default truncate-lines 1)
+(blink-cursor-mode t)
+(show-paren-mode t)
 
 ;;autocomplete
 ;;install using elpa
@@ -34,7 +36,6 @@
 (if (display-graphic-p)
     (progn (scroll-bar-mode -1)
            (highlight-changes-mode t)
-           (global-visual-line-mode 1)
            (toggle-frame-maximized)))
 
 ;; Makes scrolling smoother.
