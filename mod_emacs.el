@@ -1,4 +1,4 @@
-(set-frame-font "Liberation Mono-13")
+;(set-frame-font "Liberation Mono-13")
 ;(set-frame-font "Source Code Pro-13")
 ;(set-frame-font "Anonymous Pro-14")
 (setq utf-translate-cjk-mode nil)     ; disable CJK coding/encoding (Chinese/Japanese/Korean characters)
@@ -8,10 +8,12 @@
 (set-terminal-coding-system 'utf-8)
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
+
 (line-number-mode 1)			; have line numbers and
 (column-number-mode 1)		; column numbers in the mode line
 (global-hl-line-mode)			; highlight current line
 (global-linum-mode 1)			; add line numbers on the left
+(setq linum-format (propertize (format " %%%dd \u2502" (length (number-to-string (count-lines (point-min) (point-max)))))))
 (setq-default tab-width 2)
 (setq ring-bell-function 'ignore)
 (tool-bar-mode -1)

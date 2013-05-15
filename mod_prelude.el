@@ -1,5 +1,6 @@
-;(disable-theme 'zenburn)              ; prelude specific
-(setq prelude-whitespace nil)      		; prelude specific
-(setq prelude-guru nil)            		; prelude specific
+(disable-theme 'zenburn)             
+(setq prelude-whitespace nil)      	
+(setq prelude-guru nil)            	
 ;(load-theme 'solarized-dark t)
-(load-theme 'manoj-dark t)
+;(load-theme 'manoj-dark t)
+(load-theme 'molokai t)
