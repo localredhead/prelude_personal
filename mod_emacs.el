@@ -13,7 +13,8 @@
 (column-number-mode 1)		; column numbers in the mode line
 (global-hl-line-mode)			; highlight current line
 (global-linum-mode 1)			; add line numbers on the left
-(setq linum-format (propertize (format " %%%dd \u2502" (length (number-to-string (count-lines (point-min) (point-max)))))))
+;(setq linum-format (propertize (format " %%%dd \u2502" (length (number-to-string (count-lines (point-min) (point-max)))))))
+(setq linum-format (propertize (format " %%%dd  " (length (number-to-string (count-lines (point-min) (point-max)))))))
 (setq-default tab-width 2)
 (setq ring-bell-function 'ignore)
 (tool-bar-mode -1)
