@@ -14,7 +14,9 @@
 (global-hl-line-mode)			; highlight current line
 (global-linum-mode 1)			; add line numbers on the left
 ;(setq linum-format (propertize (format " %%%dd \u2502" (length (number-to-string (count-lines (point-min) (point-max)))))))
-(setq linum-format (propertize (format " %%%dd  " (length (number-to-string (count-lines (point-min) (point-max)))))))
+;(setq linum-format (propertize (format " %%%dd  " (length (number-to-string (count-lines (point-min) (point-max)))))))
+(setq linum-format 'dynamic)
+
 (setq-default tab-width 2)
 (setq ring-bell-function 'ignore)
 (tool-bar-mode -1)
@@ -26,6 +28,11 @@
 (setq-default truncate-lines 1)
 (blink-cursor-mode t)
 (show-paren-mode t)
+
+;;fixmee mode
+;;install from melpa
+(require 'fixmee)
+(global-fixmee-mode 1)
 
 ;;autocomplete
 ;;install using elpa
