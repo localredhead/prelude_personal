@@ -29,6 +29,11 @@
 (blink-cursor-mode t)
 (show-paren-mode t)
 
+;;powerline
+;;install from melpa
+(require 'powerline)
+(powerline-default-theme)
+
 ;;fixmee mode
 ;;install from melpa
 (require 'fixmee)
