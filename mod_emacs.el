@@ -8,16 +8,6 @@
 (set-terminal-coding-system 'utf-8)
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
-
-(line-number-mode 1)			; have line numbers and
-(column-number-mode 1)		; column numbers in the mode line
-(global-hl-line-mode)			; highlight current line
-(global-linum-mode 1)			; add line numbers on the left
-(setq linum-format (propertize (format "\u0020%%%dd\u0020" (length (number-to-string (count-lines (point-min) (point-max)))))))
-;(setq linum-format (propertize (format " %%%dd  " (length (number-to-string (count-lines (point-min) (point-max)))))))
-;(setq linum-format 'dynamic)
-;(setq linum-format "%4d \u2502")
-
 (setq-default tab-width 2)
 (setq ring-bell-function 'ignore)
 (tool-bar-mode -1)
@@ -29,6 +19,14 @@
 (setq-default truncate-lines 1)
 (blink-cursor-mode t)
 (show-paren-mode t)
+(line-number-mode 1)			; have line numbers and
+(column-number-mode 1)		; column numbers in the mode line
+(global-hl-line-mode)			; highlight current line
+(global-linum-mode 1)			; add line numbers on the left
+(setq linum-format (propertize (format "\u0020%%%dd\u0020" (length (number-to-string (count-lines (point-min) (point-max)))))))
+;(setq linum-format (propertize (format " %%%dd  " (length (number-to-string (count-lines (point-min) (point-max)))))))
+;(setq linum-format 'dynamic)
+;(setq linum-format "%4d \u2502")
 
 ;;fixmee mode
 ;;install from melpa
