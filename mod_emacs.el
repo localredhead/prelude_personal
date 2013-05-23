@@ -33,6 +33,11 @@
 (require 'fixmee)
 (global-fixmee-mode 1)
 
+;;highlight indentation
+;;install from melpa
+(require 'highlight-indentation)
+(highlight-indentation-mode)
+
 ;;autocomplete
 ;;install using elpa
 (require 'auto-complete-config)

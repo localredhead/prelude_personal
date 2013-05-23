@@ -7,6 +7,7 @@
 (global-set-key (kbd "M-t") 'helm-cmd-t)
 
 (global-set-key [remap find-tag] 'helm-etags-select)
+
 (defalias 'list-buffers 'ibuffer) ;use ibuffer instead of list-buffer
 
 ;; (global-set-key (kbd "M-3") 'split-window-horizontally)
