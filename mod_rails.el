@@ -87,3 +87,7 @@
 ;;Let SQL buffer wrap and turn off line numbers / line highlight
 (add-hook 'sql-interactive-mode-hook (lambda () (visual-line-mode 1)))
 
+;;highlight indentation
+(add-hook 'ruby-mode-hook 'highlight-indentation-mode) 
+(add-hook 'js2-mode-hook 'highlight-indentation-mode)
+(add-hook 'rhtml-mode-hook 'highlight-indentation-mode)

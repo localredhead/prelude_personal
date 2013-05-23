@@ -36,7 +36,6 @@
 ;;highlight indentation
 ;;install from melpa
 (require 'highlight-indentation)
-(highlight-indentation-mode)
 
 ;;autocomplete
 ;;install using elpa
