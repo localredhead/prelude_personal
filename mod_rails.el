@@ -1,3 +1,11 @@
+;;This is so I can send commands to rinari buffer
+;;
+(defun rinari-send-input ()
+  (comint-mode) 
+  (setq buffer-read-only nil) 
+  (compilation-shell-minor-mode))
+
+
 ;;rsense
 ;;install using package manager.
 (setq rsense-home "/usr/local/bin/rsense")
@@ -91,3 +99,9 @@
 (add-hook 'ruby-mode-hook 'highlight-indentation-mode) 
 (add-hook 'js2-mode-hook 'highlight-indentation-mode)
 (add-hook 'rhtml-mode-hook 'highlight-indentation-mode)
+
+(defun rinari-pry-jack-in ()
+  (interactive)
+  (comint-mode)
+  (setq buffer-read-only nil)
+  (compilation-shell-minor-mode))

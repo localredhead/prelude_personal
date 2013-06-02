@@ -49,7 +49,8 @@
 (if (display-graphic-p)
     (progn (scroll-bar-mode -1)
            (highlight-changes-mode t)
-           (toggle-frame-maximized)))
+           ;(toggle-frame-maximized)
+))
 
 ;; Makes scrolling smoother.
 (setq redisplay-dont-pause t
@@ -62,3 +63,8 @@
 ;; need to re-install eproject for new emacs install
 ;; install from melpa
 (require 'eproject)
+
+;;remove ^M symbols
+(add-hook 'comint-output-filter-functions 
+          'comint-strip-ctrl-m)
+
