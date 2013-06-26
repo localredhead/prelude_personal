@@ -69,6 +69,10 @@
 
 ;;rspec
 (require 'rspec-mode)
+(setq rspec-use-rvm t)
+(setq rspec-use-opts-file-when-available nil)
+(setq rspec-use-bundler-when-possible nil)
+(setq rspec-use-rake-flag nil)
 
 ;;rvm
 (require 'rvm)
@@ -98,3 +102,4 @@
   (comint-mode)
   (setq buffer-read-only nil)
   (compilation-shell-minor-mode))
+

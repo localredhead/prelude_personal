@@ -23,6 +23,7 @@
 (column-number-mode 1)		; column numbers in the mode line
 (global-hl-line-mode)			; highlight current line
 (global-linum-mode 1)			; add line numbers on the left
+(global-font-lock-mode 1)
 (setq linum-format (propertize (format "\u0020%%%dd\u0020" (length (number-to-string (count-lines (point-min) (point-max)))))))
 ;(setq linum-format (propertize (format " %%%dd  " (length (number-to-string (count-lines (point-min) (point-max)))))))
 ;(setq linum-format 'dynamic)
@@ -68,3 +69,6 @@
 (add-hook 'comint-output-filter-functions 
           'comint-strip-ctrl-m)
 
+;;edit-server for chrome extensions
+;;install from melp
+(edit-server-start)
