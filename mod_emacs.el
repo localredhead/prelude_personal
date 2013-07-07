@@ -24,10 +24,10 @@
 (global-hl-line-mode)			; highlight current line
 (global-linum-mode 1)			; add line numbers on the left
 (global-font-lock-mode 1)
-(setq linum-format (propertize (format "\u0020%%%dd\u0020" (length (number-to-string (count-lines (point-min) (point-max)))))))
+;(setq linum-format (propertize (format "\u0020%%%dd\u0020" (length (number-to-string (count-lines (point-min) (point-max)))))))
 ;(setq linum-format (propertize (format " %%%dd  " (length (number-to-string (count-lines (point-min) (point-max)))))))
 ;(setq linum-format 'dynamic)
-;(setq linum-format "%4d \u2502")
+(setq linum-format "%4d \u2502")
 
 ;;fixmee mode
 ;;install from melpa
