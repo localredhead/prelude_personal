@@ -68,7 +68,3 @@
 ;;remove ^M symbols
 (add-hook 'comint-output-filter-functions 
           'comint-strip-ctrl-m)
-
-;;edit-server for chrome extensions
-;;install from melp
-(edit-server-start)
