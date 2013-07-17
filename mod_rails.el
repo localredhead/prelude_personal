@@ -1,3 +1,5 @@
+(add-to-list 'load-path "~/.emacs.d/vendor")
+
 ;;rsense
 ;;install using package manager.
 (setq rsense-home "/usr/local/bin/rsense")
@@ -7,23 +9,23 @@
 ;;rdebug
 ;;download and unzip into /vendor
 ;;if on OSX, remove default emacs in /usr/bin and replace with emacs from homebrew
-;; ./configure && make && sudo make install 
+;; ./configure && make && sudo make install
 ;; ---or http://stackoverflow.com/questions/1359333/how-do-i-use-ruby-debug-inside-emacs (last post)
-(add-to-list 'load-path "~/.emacs.d/vendor")
-(add-to-list 'load-path "~/.emacs.d/vendor/ruby-debug-extra-0.10.4/emacs") 
+(add-to-list 'load-path "~/.emacs.d/vendor/ruby-debug-extra-0.10.4/emacs")
 (require 'rdebug)
 (setq rdebug-short-key-mode t)
 (global-set-key "\C-c\C-d" 'rdebug)
-(autoload 'rdebug "rdebug" "ruby-debug interface" t)  
+(autoload 'rdebug "rdebug" "ruby-debug interface" t)
 
 ;;; rhtml-mode
 ;; get from https://github.com/eschulte/rhtml.git
 (add-to-list 'load-path "~/.emacs.d/vendor/rhtml")
 (require 'rhtml-mode)
-(add-hook 'rhtml-mode-hook 
+(add-hook 'rhtml-mode-hook
           (lambda () (rinari-launch)) )
 
 ;;rinari
+(add-to-list 'load-path "~/.emacs.d/vendor/rinari") ;;custom version that is zeus aware
 (defun rinari-ruby-mode-hook ()
   (require 'rinari)
   (rinari-minor-mode))
@@ -31,12 +33,12 @@
 (setq rinari-tags-file-name "TAGS")
 
 ; Set Tags in root of rails dirs
-; for ubuntu: ctags-exuberant -a -e -f TAGS --tag-relative -R app lib spec config bin vendor 
-; for osx: *compile ctags from source:  export CFLAGS=-O0 ;https://trac.macports.org/ticket/31256 
+; for ubuntu: ctags-exuberant -a -e -f TAGS --tag-relative -R app lib spec config bin vendor
+; for osx: *compile ctags from source:  export CFLAGS=-O0 ;https://trac.macports.org/ticket/31256
                                         ;Also make sure you are not compiling with llvm
 ;      export PATH="/usr/local/bin:$PATH"  (after brew install ctags-excuberant)
-; generate tags for ruby gems using bundler(this is the holy grail of ctags generation) 
-;    bundle show --paths | xargs  ctags-exuberant -a -e -f TAGS --tag-relative -R app lib spec config bin vendor 
+; generate tags for ruby gems using bundler(this is the holy grail of ctags generation)
+;    bundle show --paths | xargs  ctags-exuberant -a -e -f TAGS --tag-relative -R app lib spec config bin vendor
 ; (you may need to delete osx ctags)
 ; (try just ctags on osx.)
 (defun build-ctags ()
@@ -86,20 +88,25 @@
 
 ;;Turn off truncate line mode for inf-ruby processes.
 ;;There is a problem with C-e inside inf-ruby processes and it crashes
-;;the emacs process.  To avoid it, let the lines wrap.        
+;;the emacs process.  To avoid it, let the lines wrap.
 (add-hook 'inf-ruby-mode-hook (lambda () (visual-line-mode 1)))
 ;;Let SQL buffer wrap and turn off line numbers / line highlight
 (add-hook 'sql-interactive-mode-hook (lambda () (visual-line-mode 1)))
 
 ;;highlight indentation
-(add-hook 'ruby-mode-hook 'highlight-indentation-mode) 
+(add-hook 'ruby-mode-hook 'highlight-indentation-mode)
 (add-hook 'js2-mode-hook 'highlight-indentation-mode)
 (add-hook 'rhtml-mode-hook 'highlight-indentation-mode)
 
 ;;allows access to pry from rinari web server buffer
-(defun rinari-pry-jack-in ()
+(defun pry-jack-in ()
   (interactive)
   (comint-mode)
   (setq buffer-read-only nil)
   (compilation-shell-minor-mode))
 
+;;install robe-mode via melpa
+;;requires pry
+(add-hook 'ruby-mode-hook 'robe-mode)
+(push 'ac-source-robe ac-sources)
+(add-hook 'inf-ruby-mode-hook (lambda () (robe-start)))
