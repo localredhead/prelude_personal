@@ -14,7 +14,7 @@
 (menu-bar-mode -1)
 (semantic-mode 1)
 (global-ede-mode t)
-(ido-mode 1)
+;(ido-mode 1) ;prelude packages this
 (setq ido-enable-flex-matching t)
 (setq-default truncate-lines 1)
 (blink-cursor-mode t)
@@ -22,12 +22,12 @@
 (line-number-mode 1)			; have line numbers and
 (column-number-mode 1)		; column numbers in the mode line
 (global-hl-line-mode)			; highlight current line
-(global-linum-mode 1)			; add line numbers on the left
+;(global-linum-mode 1)			; add line numbers on the left
 (global-font-lock-mode 1)
 ;(setq linum-format (propertize (format "\u0020%%%dd\u0020" (length (number-to-string (count-lines (point-min) (point-max)))))))
 ;(setq linum-format (propertize (format " %%%dd  " (length (number-to-string (count-lines (point-min) (point-max)))))))
 ;(setq linum-format 'dynamic)
-(setq linum-format "%4d \u2502")
+;(setq linum-format "%4d\u2502 ")
 
 ;;fixmee mode
 ;;install from melpa
@@ -66,5 +66,5 @@
 (require 'eproject)
 
 ;;remove ^M symbols
-(add-hook 'comint-output-filter-functions 
+(add-hook 'comint-output-filter-functions
           'comint-strip-ctrl-m)

@@ -35,7 +35,7 @@
 ; Set Tags in root of rails dirs
 ; for ubuntu: ctags-exuberant -a -e -f TAGS --tag-relative -R app lib spec config bin vendor
 ; for osx: *compile ctags from source:  export CFLAGS=-O0 ;https://trac.macports.org/ticket/31256
-                                        ;Also make sure you are not compiling with llvm
+                                         ;Also make sure you are not compiling with llvm
 ;      export PATH="/usr/local/bin:$PATH"  (after brew install ctags-excuberant)
 ; generate tags for ruby gems using bundler(this is the holy grail of ctags generation)
 ;    bundle show --paths | xargs  ctags-exuberant -a -e -f TAGS --tag-relative -R app lib spec config bin vendor
@@ -59,8 +59,8 @@
 
 ;;emacs-rails
 ;;install from remvee's github
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/rails-minor-mode"))
-(require 'rails)
+;; (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/rails-minor-mode"))
+;; (require 'rails)
 
 ;;emacs-spork
 ;;install from github
