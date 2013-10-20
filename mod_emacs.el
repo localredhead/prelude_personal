@@ -1,6 +1,11 @@
+(prelude-require-packages '(fixmee highlight-indentation auto-complete eproject smart-mode-line))
+;(prelude-require-package 'some-package)
+
+
 ;(set-frame-font "Liberation Mono-13")
-;(set-frame-font "Source Code Pro-13")
+(set-frame-font "Source Code Pro-13")
 ;(set-frame-font "Anonymous Pro-14")
+(setq gc-cons-threshold 20000000)     ; 20 MB
 (setq utf-translate-cjk-mode nil)     ; disable CJK coding/encoding (Chinese/Japanese/Korean characters)
 (set-language-environment 'utf-8)  	  ; force everything to UTF-8
 (setq locale-coding-system 'utf-8)  	; so all character input is valid.
@@ -68,3 +73,12 @@
 ;;remove ^M symbols
 (add-hook 'comint-output-filter-functions
           'comint-strip-ctrl-m)
+
+;;smart-mode-line
+;;install from melpa
+(require 'smart-mode-line)
+(if after-init-time (sml/setup)
+  (add-hook 'after-init-hook 'sml/setup))
+
+;;install restclient from melpa
+;;(require 'restclient)

@@ -1,3 +1,6 @@
+(prelude-require-packages '(rspec-mode rvm bundler rsense))
+;(prelude-require-package 'some-package)
+
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
 ;;rsense
@@ -11,26 +14,26 @@
 ;;if on OSX, remove default emacs in /usr/bin and replace with emacs from homebrew
 ;; ./configure && make && sudo make install
 ;; ---or http://stackoverflow.com/questions/1359333/how-do-i-use-ruby-debug-inside-emacs (last post)
-(add-to-list 'load-path "~/.emacs.d/vendor/ruby-debug-extra-0.10.4/emacs")
-(require 'rdebug)
-(setq rdebug-short-key-mode t)
-(global-set-key "\C-c\C-d" 'rdebug)
-(autoload 'rdebug "rdebug" "ruby-debug interface" t)
+;; (add-to-list 'load-path "~/.emacs.d/vendor/ruby-debug-extra-0.10.4/emacs")
+;; (require 'rdebug)
+;; (setq rdebug-short-key-mode t)
+;; (global-set-key "\C-c\C-d" 'rdebug)
+;; (autoload 'rdebug "rdebug" "ruby-debug interface" t)
 
 ;;; rhtml-mode
 ;; get from https://github.com/eschulte/rhtml.git
-(add-to-list 'load-path "~/.emacs.d/vendor/rhtml")
-(require 'rhtml-mode)
-(add-hook 'rhtml-mode-hook
-          (lambda () (rinari-launch)) )
+;; (add-to-list 'load-path "~/.emacs.d/vendor/rhtml")
+;; (require 'rhtml-mode)
+;; (add-hook 'rhtml-mode-hook
+;;           (lambda () (rinari-launch)) )
 
 ;;rinari
-(add-to-list 'load-path "~/.emacs.d/vendor/rinari") ;;custom version that is zeus aware
-(defun rinari-ruby-mode-hook ()
-  (require 'rinari)
-  (rinari-minor-mode))
-(add-hook 'ruby-mode-hook 'rinari-ruby-mode-hook)
-(setq rinari-tags-file-name "TAGS")
+;(add-to-list 'load-path "~/.emacs.d/vendor/rinari") ;;custom version that is zeus aware
+;; (defun rinari-ruby-mode-hook ()
+;;   (require 'rinari)
+;;   (rinari-minor-mode))
+;; (add-hook 'ruby-mode-hook 'rinari-ruby-mode-hook)
+;; (setq rinari-tags-file-name "TAGS")
 
 ; Set Tags in root of rails dirs
 ; for ubuntu: ctags-exuberant -a -e -f TAGS --tag-relative -R app lib spec config bin vendor
@@ -64,10 +67,10 @@
 
 ;;emacs-spork
 ;;install from github
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/emacs-spork"))
-(require 'emacs-spork)
-(setq es-use-tmux-pane nil)
-(setq es-use-emacs-buffer t)
+;; (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/emacs-spork"))
+;; (require 'emacs-spork)
+;; (setq es-use-tmux-pane nil)
+;; (setq es-use-emacs-buffer t)
 
 ;;rspec
 (require 'rspec-mode)
@@ -75,6 +78,7 @@
 (setq rspec-use-opts-file-when-available nil)
 (setq rspec-use-bundler-when-possible t);was nil
 (setq rspec-use-rake-flag nil)
+(setq rspec-use-zeus-when-possible nil)
 
 ;;rvm
 (require 'rvm)
@@ -90,13 +94,14 @@
 ;;There is a problem with C-e inside inf-ruby processes and it crashes
 ;;the emacs process.  To avoid it, let the lines wrap.
 (add-hook 'inf-ruby-mode-hook (lambda () (visual-line-mode 1)))
+
 ;;Let SQL buffer wrap and turn off line numbers / line highlight
 (add-hook 'sql-interactive-mode-hook (lambda () (visual-line-mode 1)))
 
 ;;highlight indentation
 (add-hook 'ruby-mode-hook 'highlight-indentation-mode)
 (add-hook 'js2-mode-hook 'highlight-indentation-mode)
-(add-hook 'rhtml-mode-hook 'highlight-indentation-mode)
+;; (add-hook 'rhtml-mode-hook 'highlight-indentation-mode)
 
 ;;allows access to pry from rinari web server buffer
 (defun pry-jack-in ()
@@ -107,6 +112,7 @@
 
 ;;install robe-mode via melpa
 ;;requires pry
-(add-hook 'ruby-mode-hook 'robe-mode)
-(push 'ac-source-robe ac-sources)
-(add-hook 'inf-ruby-mode-hook (lambda () (robe-start)))
+;; (add-hook 'ruby-mode-hook 'robe-mode)
+;; (push 'ac-source-robe ac-sources)
+;; (inf-ruby-console-auto)
+;; (add-hook 'inf-ruby-mode-hook (lambda () (robe-start)))

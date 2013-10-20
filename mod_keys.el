@@ -1,3 +1,6 @@
+(prelude-require-packages '(helm-cmd-t))
+;(prelude-require-package 'some-package)
+
 ;(ac-set-trigger-key "TAB")
 (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
 
@@ -6,7 +9,7 @@
 (require 'helm-cmd-t)
 (global-set-key (kbd "M-t") 'helm-cmd-t)
 
-(global-set-key [remap find-tag] 'helm-etags-select)
+;(global-set-key [remap find-tag] 'helm-etags-select)
 
 (defalias 'list-buffers 'ibuffer) ;use ibuffer instead of list-buffer
 
