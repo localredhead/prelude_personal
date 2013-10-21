@@ -1,5 +1,5 @@
-(prelude-require-packages '(rspec-mode rvm bundler rsense))
-;(prelude-require-package 'some-package)
+(prelude-require-packages '(rspec-mode rvm bundler rsense rhtml-mode))
+(prelude-require-package 'rhtml-mode)
 
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
@@ -9,31 +9,12 @@
 (add-to-list 'load-path (concat rsense-home "/etc"))
 (require 'rsense)
 
-;;rdebug
-;;download and unzip into /vendor
-;;if on OSX, remove default emacs in /usr/bin and replace with emacs from homebrew
-;; ./configure && make && sudo make install
-;; ---or http://stackoverflow.com/questions/1359333/how-do-i-use-ruby-debug-inside-emacs (last post)
-;; (add-to-list 'load-path "~/.emacs.d/vendor/ruby-debug-extra-0.10.4/emacs")
-;; (require 'rdebug)
-;; (setq rdebug-short-key-mode t)
-;; (global-set-key "\C-c\C-d" 'rdebug)
-;; (autoload 'rdebug "rdebug" "ruby-debug interface" t)
-
-;;; rhtml-mode
-;; get from https://github.com/eschulte/rhtml.git
-;; (add-to-list 'load-path "~/.emacs.d/vendor/rhtml")
-;; (require 'rhtml-mode)
-;; (add-hook 'rhtml-mode-hook
-;;           (lambda () (rinari-launch)) )
-
-;;rinari
-;(add-to-list 'load-path "~/.emacs.d/vendor/rinari") ;;custom version that is zeus aware
-;; (defun rinari-ruby-mode-hook ()
-;;   (require 'rinari)
-;;   (rinari-minor-mode))
-;; (add-hook 'ruby-mode-hook 'rinari-ruby-mode-hook)
-;; (setq rinari-tags-file-name "TAGS")
+;;RHTML mode
+;;install from melpa
+(defun rhtml-mode-hook ()
+  (autoload 'rhtml-mode "rhtml-mode" nil t)
+  (add-to-list 'auto-mode-alist '("\\.erb\\'" . rhtml-mode))
+  (add-hook 'rhtml-mode '(lambda () (define-key rhtml-mode-map (kbd "M-s") 'save-buffer))))
 
 ; Set Tags in root of rails dirs
 ; for ubuntu: ctags-exuberant -a -e -f TAGS --tag-relative -R app lib spec config bin vendor
@@ -44,7 +25,7 @@
 ;    bundle show --paths | xargs  ctags-exuberant -a -e -f TAGS --tag-relative -R app lib spec config bin vendor
 ; (you may need to delete osx ctags)
 ; (try just ctags on osx.)
-(defun build-ctags ()
+(defun build-ruby-ctags ()
   (interactive)
   (message "building project tags")
   (let ((root (eproject-root)))
@@ -59,26 +40,13 @@
     (visit-tags-table tags-file)
     (message (concat "Loaded " tags-file))))
 
-
-;;emacs-rails
-;;install from remvee's github
-;; (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/rails-minor-mode"))
-;; (require 'rails)
-
-;;emacs-spork
-;;install from github
-;; (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/emacs-spork"))
-;; (require 'emacs-spork)
-;; (setq es-use-tmux-pane nil)
-;; (setq es-use-emacs-buffer t)
-
 ;;rspec
 (require 'rspec-mode)
 (setq rspec-use-rvm t)
 (setq rspec-use-opts-file-when-available nil)
 (setq rspec-use-bundler-when-possible t);was nil
 (setq rspec-use-rake-flag nil)
-(setq rspec-use-zeus-when-possible nil)
+(setq rspec-use-zeus-when-possible t)
 
 ;;rvm
 (require 'rvm)
@@ -109,10 +77,3 @@
   (comint-mode)
   (setq buffer-read-only nil)
   (compilation-shell-minor-mode))
-
-;;install robe-mode via melpa
-;;requires pry
-;; (add-hook 'ruby-mode-hook 'robe-mode)
-;; (push 'ac-source-robe ac-sources)
-;; (inf-ruby-console-auto)
-;; (add-hook 'inf-ruby-mode-hook (lambda () (robe-start)))

@@ -1,4 +1,4 @@
-(prelude-require-packages '(fixmee highlight-indentation auto-complete eproject smart-mode-line))
+(prelude-require-packages '(fixmee highlight-indentation auto-complete eproject smart-mode-line multi-term))
 ;(prelude-require-package 'some-package)
 
 
