@@ -2,7 +2,7 @@
 ;(prelude-require-package 'some-package)
 
 ;(ac-set-trigger-key "TAB")
-(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
+;(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
 
 ;;Helm Cmd T
 ;;install from melpa

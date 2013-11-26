@@ -1,7 +1,14 @@
 (prelude-require-packages '(fixmee highlight-indentation auto-complete eproject smart-mode-line multi-term))
 ;(prelude-require-package 'some-package)
 
+(require 'server)
+(unless (server-running-p)
+  (server-start))
+(setenv "EDITOR" "emacsclient -nw")
 
+;(setq max-lisp-eval-depth 10000) 
+;(setq max-specpdl-size 5)
+;(setq debug-on-error t)
 ;(set-frame-font "Liberation Mono-13")
 (set-frame-font "Source Code Pro-13")
 ;(set-frame-font "Anonymous Pro-14")
