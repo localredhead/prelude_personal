@@ -1,3 +1,4 @@
+(prelude-require-package 'cyberpunk-theme)
 (disable-theme 'zenburn)
 (setq prelude-whitespace nil)
 (setq prelude-guru nil)

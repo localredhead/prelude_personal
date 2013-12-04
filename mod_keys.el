@@ -13,6 +13,8 @@
 
 (defalias 'list-buffers 'ibuffer) ;use ibuffer instead of list-buffer
 
+(key-chord-define-global "nn" 'nav-toggle)
+
 ;; (global-set-key (kbd "M-3") 'split-window-horizontally)
 ;; (global-set-key (kbd "M-4") 'split-window-vertically) ; split pane top/bottom
 ;; (global-set-key (kbd "M-s") 'other-window) ; cursor to other pane

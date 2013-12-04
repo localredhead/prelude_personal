@@ -1,10 +1,10 @@
-(prelude-require-packages '(fixmee highlight-indentation auto-complete eproject smart-mode-line multi-term))
-;(prelude-require-package 'some-package)
+(prelude-require-packages '(fixmee highlight-indentation auto-complete eproject smart-mode-line multi-term nav))
+;(prelude-require-package 'nav)
 
 (require 'server)
 (unless (server-running-p)
   (server-start))
-(setenv "EDITOR" "emacsclient -nw")
+;(setenv "EDITOR" "emacsclient -nw")
 
 ;(setq max-lisp-eval-depth 10000) 
 ;(setq max-specpdl-size 5)
@@ -40,6 +40,9 @@
 ;(setq linum-format (propertize (format " %%%dd  " (length (number-to-string (count-lines (point-min) (point-max)))))))
 ;(setq linum-format 'dynamic)
 ;(setq linum-format "%4d\u2502 ")
+
+;;emacs-nav
+;;install from melpa
 
 ;;fixmee mode
 ;;install from melpa
