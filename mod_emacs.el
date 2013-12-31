@@ -10,7 +10,7 @@
 ;(setq max-specpdl-size 5)
 ;(setq debug-on-error t)
 ;(set-frame-font "Liberation Mono-13")
-(set-frame-font "Source Code Pro-13")
+(set-frame-font "Source Code Pro-14")
 ;(set-frame-font "Anonymous Pro-14")
 (setq gc-cons-threshold 20000000)     ; 20 MB
 (setq utf-translate-cjk-mode nil)     ; disable CJK coding/encoding (Chinese/Japanese/Korean characters)

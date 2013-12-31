@@ -1,4 +1,4 @@
-(prelude-require-packages '(rspec-mode rvm bundler rsense rhtml-mode))
+(prelude-require-packages '(rspec-mode bundler rsense rhtml-mode))
 (prelude-require-package 'rhtml-mode)
 
 (add-to-list 'load-path "~/.emacs.d/vendor")
@@ -42,17 +42,11 @@
 
 ;;rspec
 (require 'rspec-mode)
-(setq rspec-use-rvm t)
+;(setq rspec-use-rvm t)
 (setq rspec-use-opts-file-when-available nil)
 (setq rspec-use-bundler-when-possible t);was nil
 (setq rspec-use-rake-flag nil)
 (setq rspec-use-zeus-when-possible t)
-
-;;rvm
-(require 'rvm)
-;(rvm-use-default)
-(add-hook 'ruby-mode-hook
-          (lambda () (rvm-activate-corresponding-ruby)))  ;make sure you have a .rvmrc file for the project! run rvm --rvmrc --create ruby@gemset
 
 ;;bundler
 ;;install from melpa

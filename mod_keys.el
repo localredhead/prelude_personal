@@ -1,19 +1,23 @@
-(prelude-require-packages '(helm-cmd-t))
-;(prelude-require-package 'some-package)
+(prelude-require-packages '(nav))
+;(prelude-require-package 'helm-cmd-t)
 
 ;(ac-set-trigger-key "TAB")
 ;(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
 
 ;;Helm Cmd T
 ;;install from melpa
-(require 'helm-cmd-t)
-(global-set-key (kbd "M-t") 'helm-cmd-t)
+;(require 'helm-cmd-t)
+(global-set-key (kbd "M-t") 'helm-prelude)
 
 ;(global-set-key [remap find-tag] 'helm-etags-select)
 
 (defalias 'list-buffers 'ibuffer) ;use ibuffer instead of list-buffer
 
-(key-chord-define-global "nn" 'nav-toggle)
+(require 'nav)
+(key-chord-define-global "nj" 'nav-toggle)
+
+(require 'multi-term)
+(key-chord-define-global "td" 'multi-term-dedicated-toggle)
 
 ;; (global-set-key (kbd "M-3") 'split-window-horizontally)
 ;; (global-set-key (kbd "M-4") 'split-window-vertically) ; split pane top/bottom
