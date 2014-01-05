@@ -1,16 +1,20 @@
-(prelude-require-packages '(rspec-mode bundler rsense rhtml-mode))
+(prelude-require-packages '(rspec-mode bundler rsense rhtml-mode rbenv robe))
 (prelude-require-package 'rhtml-mode)
 
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
 ;;rsense
-;;install using package manager.
 (setq rsense-home "/usr/local/bin/rsense")
 (add-to-list 'load-path (concat rsense-home "/etc"))
 (require 'rsense)
 
-;;RHTML mode
-;;install from melpa
+;;rbenv
+(setq rbenv-executable "/usr/local/bin/rbenv")
+(setq rbenv-show-active-ruby-in-modeline nil)
+(global-rbenv-mode)
+(rbenv-use-global)
+
+;;RHTML mode  ;todo swap this for web mode
 (defun rhtml-mode-hook ()
   (autoload 'rhtml-mode "rhtml-mode" nil t)
   (add-to-list 'auto-mode-alist '("\\.erb\\'" . rhtml-mode))
@@ -42,14 +46,12 @@
 
 ;;rspec
 (require 'rspec-mode)
-;(setq rspec-use-rvm t)
 (setq rspec-use-opts-file-when-available nil)
 (setq rspec-use-bundler-when-possible t);was nil
 (setq rspec-use-rake-flag nil)
 (setq rspec-use-zeus-when-possible t)
 
 ;;bundler
-;;install from melpa
 (require 'bundler)
 
 ;;Turn off truncate line mode for inf-ruby processes.
@@ -71,3 +73,11 @@
   (comint-mode)
   (setq buffer-read-only nil)
   (compilation-shell-minor-mode))
+
+;;robe - provides alot of IDE functionality
+(defun setup-robe ()
+  (robe-mode 1)
+  (robe-start))
+(require 'robe)
+(add-hook 'ruby-mode-hook 'setup-robe)
+(add-hook 'robe-mode-hook 'robe-ac-setup)

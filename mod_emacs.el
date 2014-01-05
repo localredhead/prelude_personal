@@ -1,16 +1,15 @@
-(prelude-require-packages '(fixmee highlight-indentation auto-complete eproject smart-mode-line multi-term nav))
+(prelude-require-packages '(fixmee highlight-indentation auto-complete eproject smart-mode-line multi-term nav hlinum))
 ;(prelude-require-package 'nav)
 
 (require 'server)
 (unless (server-running-p)
   (server-start))
 ;(setenv "EDITOR" "emacsclient -nw")
-
 ;(setq max-lisp-eval-depth 10000) 
 ;(setq max-specpdl-size 5)
 ;(setq debug-on-error t)
 ;(set-frame-font "Liberation Mono-13")
-(set-frame-font "Source Code Pro-14")
+;(set-frame-font "Source Code Pro-14")
 ;(set-frame-font "Anonymous Pro-14")
 (setq gc-cons-threshold 20000000)     ; 20 MB
 (setq utf-translate-cjk-mode nil)     ; disable CJK coding/encoding (Chinese/Japanese/Korean characters)
@@ -26,23 +25,28 @@
 (menu-bar-mode -1)
 (semantic-mode 1)
 (global-ede-mode t)
-;(ido-mode 1) ;prelude packages this
 (setq ido-enable-flex-matching t)
 (setq-default truncate-lines 1)
 (blink-cursor-mode t)
 (show-paren-mode t)
+(global-font-lock-mode 1)
+(fringe-mode -1)
 (line-number-mode 1)			; have line numbers and
 (column-number-mode 1)		; column numbers in the mode line
-(global-hl-line-mode)			; highlight current line
-;(global-linum-mode 1)			; add line numbers on the left
-(global-font-lock-mode 1)
-;(setq linum-format (propertize (format "\u0020%%%dd\u0020" (length (number-to-string (count-lines (point-min) (point-max)))))))
-;(setq linum-format (propertize (format " %%%dd  " (length (number-to-string (count-lines (point-min) (point-max)))))))
-;(setq linum-format 'dynamic)
-;(setq linum-format "%4d\u2502 ")
+(global-hl-line-mode 1)	  ; highlight current line
+(global-linum-mode 1)     ; line numbers in the gutter
 
-;;emacs-nav
-;;install from melpa
+;; The following attempts to dynamically adjust the width of the gutter
+;; to properly display line numbers. (cargo culted from Gist).
+(defadvice linum-update-window (around linum-dynamic activate)
+  (let* ((w (length (number-to-string
+                     (count-lines (point-min) (point-max)))))
+         (linum-format (concat " %" (number-to-string w) "d ")))
+    ad-do-it))
+
+;;higlight current linenumber
+(require 'hlinum)
+(hlinum-activate)
 
 ;;fixmee mode
 ;;install from melpa
@@ -56,7 +60,7 @@
 ;;autocomplete
 ;;install using elpa
 (require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20121203.832/dict")
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20131128.233/dict")
 (ac-config-default)
 (global-auto-complete-mode t)
 (ac-flyspell-workaround)
