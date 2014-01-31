@@ -1,4 +1,4 @@
-(prelude-require-packages '(rspec-mode bundler rsense rhtml-mode rbenv robe))
+(prelude-require-packages '(rspec-mode bundler rsense rhtml-mode rbenv rubocop robe))
 (prelude-require-package 'rhtml-mode)
 
 (add-to-list 'load-path "~/.emacs.d/vendor")
@@ -75,9 +75,12 @@
   (compilation-shell-minor-mode))
 
 ;;robe - provides alot of IDE functionality
-(defun setup-robe ()
-  (robe-mode 1)
-  (robe-start))
-(require 'robe)
-(add-hook 'ruby-mode-hook 'setup-robe)
-(add-hook 'robe-mode-hook 'robe-ac-setup)
+;; (defun setup-robe ()
+;;   (robe-mode 1)
+;;   (robe-start))
+;; (require 'robe)
+;; (add-hook 'ruby-mode-hook 'setup-robe)
+;; (add-hook 'robe-mode-hook 'robe-ac-setup)
+
+;;rubocop - thought this was part of prelude?
+(add-hook 'ruby-mode-hook 'rubocop-mode)

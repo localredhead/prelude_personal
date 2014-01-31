@@ -1,4 +1,4 @@
-(prelude-require-packages '(fixmee highlight-indentation auto-complete eproject smart-mode-line multi-term nav hlinum))
+(prelude-require-packages '(fixmee highlight-indentation auto-complete eproject smart-mode-line multi-term nav hlinum restclient twittering-mode w3m))
 ;(prelude-require-package 'nav)
 
 (require 'server)
@@ -35,7 +35,7 @@
 (column-number-mode 1)		; column numbers in the mode line
 (global-hl-line-mode 1)	  ; highlight current line
 (global-linum-mode 1)     ; line numbers in the gutter
-
+(setq ns-pop-up-frames nil)
 ;; The following attempts to dynamically adjust the width of the gutter
 ;; to properly display line numbers. (cargo culted from Gist).
 (defadvice linum-update-window (around linum-dynamic activate)
@@ -56,7 +56,8 @@
 ;;highlight indentation
 ;;install from melpa
 (require 'highlight-indentation)
-
+(set-face-background 'highlight-indentation-face "#333344")
+(set-face-background 'highlight-indentation-current-column-face "#333344")
 ;;autocomplete
 ;;install using elpa
 (require 'auto-complete-config)
@@ -95,4 +96,34 @@
   (add-hook 'after-init-hook 'sml/setup))
 
 ;;install restclient from melpa
-;;(require 'restclient)
+(require 'restclient)
+
+;;twittering mode
+(setq twittering-use-master-password t)
+
+;;Fix ansi color codes
+;http://stackoverflow.com/questions/3072648/cucumbers-ansi-colors-messing-up-emacs-compilation-buffer
+;http://stackoverflow.com/questions/5819719/emacs-shell-command-output-not-showing-ansi-colors-but-the-code
+(require 'ansi-color)
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+(defadvice display-message-or-buffer (before ansi-color activate)
+  "Process ANSI color codes in shell output."
+  (let ((buf (ad-get-arg 0)))
+    (and (bufferp buf)
+         (string= (buffer-name buf) "*Shell Command Output*")
+         (with-current-buffer buf 
+           (ansi-color-apply-on-region (point-min) (point-max))))))
+
+;;Fix ansi colors for compilation buffer
+(defun colorize-compilation-buffer ()
+  (toggle-read-only)
+  (ansi-color-apply-on-region (point-min) (point-max))
+  (toggle-read-only))
+(add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
+
+;;w3m
+(setq browse-url-browser-function 'w3m-browse-url)
+(autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
+ ;; optional keyboard short-cut
+(global-set-key "\C-xm" 'browse-url-at-point)
+(setq w3m-use-cookies t)
