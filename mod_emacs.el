@@ -1,4 +1,4 @@
-(prelude-require-packages '(fixmee highlight-indentation auto-complete eproject smart-mode-line multi-term nav hlinum restclient twittering-mode w3m))
+(prelude-require-packages '(fixmee highlight-indentation auto-complete eproject smart-mode-line multi-term nav hlinum restclient twittering-mode w3m powerline))
 ;(prelude-require-package 'nav)
 
 (require 'server)
@@ -36,19 +36,19 @@
 (global-hl-line-mode 1)	  ; highlight current line
 (global-linum-mode 1)     ; line numbers in the gutter
 (setq ns-pop-up-frames nil)
-;; The following attempts to dynamically adjust the width of the gutter
-;; to properly display line numbers. (cargo culted from Gist).
-(defadvice linum-update-window (around linum-dynamic activate)
-  (let* ((w (length (number-to-string
-                     (count-lines (point-min) (point-max)))))
-         (linum-format (concat " %" (number-to-string w) "d ")))
-    ad-do-it))
+;;The following attempts to dynamically adjust the width of the gutter
+;;to properly display line numbers. (cargo culted from Gist).
+;;(defadvice linum-update-window (around linum-dynamic activate)
+;;  (let* ((w (length (number-to-string
+;;                     (count-lines (point-min) (point-max)))))
+;;         (linum-format (concat " %" (number-to-string w) "d ")))
+;;    ad-do-it))
 
 ;;higlight current linenumber
 (require 'hlinum)
 (hlinum-activate)
 
-;;fixmee mode
+1;;fixmee mode
 ;;install from melpa
 (require 'fixmee)
 (global-fixmee-mode 1)
@@ -56,8 +56,9 @@
 ;;highlight indentation
 ;;install from melpa
 (require 'highlight-indentation)
-(set-face-background 'highlight-indentation-face "#333344")
-(set-face-background 'highlight-indentation-current-column-face "#333344")
+(set-face-background 'highlight-indentation-face "#000000")
+(set-face-background 'highlight-indentation-current-column-face "#000000")
+
 ;;autocomplete
 ;;install using elpa
 (require 'auto-complete-config)
@@ -89,11 +90,16 @@
 (add-hook 'comint-output-filter-functions
           'comint-strip-ctrl-m)
 
+;;powerline
+(require 'powerline)
+(powerline-center-theme)
+
 ;;smart-mode-line
 ;;install from melpa
 (require 'smart-mode-line)
 (if after-init-time (sml/setup)
   (add-hook 'after-init-hook 'sml/setup))
+
 
 ;;install restclient from melpa
 (require 'restclient)
