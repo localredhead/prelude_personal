@@ -13,5 +13,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(hl-line ((t (:inherit highlight :background "black" :underline nil))))
- '(linum ((t (:background "brightblack" :foreground "black")))))
+ '(linum ((t (:inherit (shadow default) :background "#000000" :foreground "color-235")))))

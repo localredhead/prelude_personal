@@ -48,7 +48,7 @@
 (require 'hlinum)
 (hlinum-activate)
 
-1;;fixmee mode
+;;fixmee mode
 ;;install from melpa
 (require 'fixmee)
 (global-fixmee-mode 1)
@@ -56,8 +56,9 @@
 ;;highlight indentation
 ;;install from melpa
 (require 'highlight-indentation)
-(set-face-background 'highlight-indentation-face "#000000")
-(set-face-background 'highlight-indentation-current-column-face "#000000")
+;; ;uncomment for solarized
+;; (set-face-background 'highlight-indentation-face "#000000")
+;; (set-face-background 'highlight-indentation-current-column-face "#000000")
 
 ;;autocomplete
 ;;install using elpa
@@ -133,3 +134,7 @@
  ;; optional keyboard short-cut
 (global-set-key "\C-xm" 'browse-url-at-point)
 (setq w3m-use-cookies t)
+
+
+;; '(hl-line ((t (:inherit highlight :background "black" :underline nil))))
+;; '(linum ((t (:background "brightblack" :foreground "black")))))
