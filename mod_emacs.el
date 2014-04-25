@@ -98,9 +98,11 @@
 ;;smart-mode-line
 ;;install from melpa
 (require 'smart-mode-line)
+(setq sml/shorten-modes t)
+(setq sml/shorten-directory t)
+(setq sml/theme 'dark)
 (if after-init-time (sml/setup)
   (add-hook 'after-init-hook 'sml/setup))
-
 
 ;;install restclient from melpa
 (require 'restclient)
