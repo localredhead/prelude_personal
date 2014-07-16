@@ -21,6 +21,8 @@
 
 (require 'multi-term)
 (key-chord-define-global "td" 'multi-term-dedicated-toggle)
+(key-chord-define-global "@@" 'ecb-activate)
+(key-chord-define-global "!!" 'ecb-deactivate)
 
 ;; (global-set-key (kbd "M-3") 'split-window-horizontally)
 ;; (global-set-key (kbd "M-4") 'split-window-vertically) ; split pane top/bottom
