@@ -65,6 +65,8 @@
 ;;highlight indentation
 (add-hook 'ruby-mode-hook 'highlight-indentation-mode)
 (add-hook 'js2-mode-hook 'highlight-indentation-mode)
+(add-hook 'haml-mode-hook 'highlight-indentation-mode)
+(add-hook 'slim-mode-hook 'highlight-indentation-mode)
 ;; (add-hook 'rhtml-mode-hook 'highlight-indentation-mode)
 
 ;;allows access to pry from rinari web server buffer
@@ -75,12 +77,13 @@
   (compilation-shell-minor-mode))
 
 ;;robe - provides alot of IDE functionality
-;; (defun setup-robe ()
-;;   (robe-mode 1)
-;;   (robe-start))
-;; (require 'robe)
-;; (add-hook 'ruby-mode-hook 'setup-robe)
-;; (add-hook 'robe-mode-hook 'robe-ac-setup)
+;(defun setup-robe ()
+;  (robe-mode 1)
+;  (robe-start))
+;(require 'robe)
+;(add-hook 'ruby-mode-hook 'setup-robe)
+;(push 'company-robe company-backends)
 
 ;;rubocop - thought this was part of prelude?
 (add-hook 'ruby-mode-hook 'rubocop-mode)
+(add-hook 'haml-mode-hook 'rubocop-mode)

@@ -1,20 +1,23 @@
-(prelude-require-packages '(nav))
-;(prelude-require-package 'helm-cmd-t)
+(prelude-require-packages '(nav multi-term))
+(prelude-require-package 'helm-cmd-t)
 
-;(ac-set-trigger-key "TAB")
-;(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
+;; (ac-set-trigger-key "TAB")
+;; (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
+(global-set-key (kbd "M-TAB") 'company-complete)
 
 ;;Helm Cmd T
 ;;install from melpa
-;(require 'helm-cmd-t)
+(require 'helm-cmd-t)
 (global-set-key (kbd "M-t") 'helm-prelude)
-
+;; (global-set-key (kbd "M-z") ')
+;(global-set-key (kbd "M-t") 'helm-for-files)
 ;(global-set-key [remap find-tag] 'helm-etags-select)
 
 (defalias 'list-buffers 'ibuffer) ;use ibuffer instead of list-buffer
 
 (require 'nav)
 (key-chord-define-global "nj" 'nav-toggle)
+(key-chord-define-global "kk" 'kill-whole-line)
 
 (require 'multi-term)
 (key-chord-define-global "td" 'multi-term-dedicated-toggle)
