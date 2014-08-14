@@ -15,10 +15,9 @@
 (rbenv-use-global)
 
 ;;RHTML mode  ;todo swap this for web mode
-(defun rhtml-mode-hook ()
-  (autoload 'rhtml-mode "rhtml-mode" nil t)
-  (add-to-list 'auto-mode-alist '("\\.erb\\'" . rhtml-mode))
-  (add-hook 'rhtml-mode '(lambda () (define-key rhtml-mode-map (kbd "M-s") 'save-buffer))))
+(autoload 'rhtml-mode "rhtml-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . rhtml-mode))
+(add-hook 'rhtml-mode '(lambda () (define-key rhtml-mode-map (kbd "M-s") 'save-buffer)))
 
 ; Set Tags in root of rails dirs
 ; for ubuntu: ctags-exuberant -a -e -f TAGS --tag-relative -R app lib spec config bin vendor
@@ -67,6 +66,8 @@
 (add-hook 'js2-mode-hook 'highlight-indentation-mode)
 (add-hook 'haml-mode-hook 'highlight-indentation-mode)
 (add-hook 'slim-mode-hook 'highlight-indentation-mode)
+(add-hook 'handlebars-mode-hook 'highlight-indentation-mode)
+(add-hook 'jsx-mode-hook 'highlight-indentation-mode)
 ;; (add-hook 'rhtml-mode-hook 'highlight-indentation-mode)
 
 ;;allows access to pry from rinari web server buffer
@@ -90,12 +91,13 @@
 
 ;;handlebars
 (require 'handlebars-mode)
-(defun handlebars-mode-hook ()
-  (autoload 'handlebars-mode "handlebars-mode" nil t)
-  (add-to-list 'auto-mode-alist '("\\.handlebars\\'" . handlebars-mode))
-  (add-to-list 'auto-mode-alist '("\.handlebars\.erb$" . handlebars-mode)))
-
+(autoload 'handlebars-mode "handlebars-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.handlebars\\'" . handlebars-mode))
+(add-to-list 'auto-mode-alist '("\.handlebars\.erb$" . handlebars-mode))
 
 ;;jsx mode
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
 (autoload 'jsx-mode "jsx-mode" "JSX mode" t)
+
+(rhtml-mode-hook)
+(handlebars-mode-hook)
