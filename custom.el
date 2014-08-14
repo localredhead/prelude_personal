@@ -6,6 +6,7 @@
  '(ecb-options-version "2.40")
  '(ecb-windows-width 0.25)
  '(fci-rule-color "#383838")
+ '(url-proxy-services (quote (("https" . "127.0.0.1:8888"))))
  '(vc-annotate-background "#2B2B2B")
  '(vc-annotate-color-map
    (quote

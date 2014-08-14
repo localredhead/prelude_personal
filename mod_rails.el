@@ -1,4 +1,4 @@
-(prelude-require-packages '(rspec-mode bundler rsense rhtml-mode rbenv rubocop robe))
+(prelude-require-packages '(rspec-mode bundler rsense rhtml-mode rbenv rubocop robe jsx-mode handlebars-mode))
 (prelude-require-package 'rhtml-mode)
 
 (add-to-list 'load-path "~/.emacs.d/vendor")
@@ -87,3 +87,15 @@
 ;;rubocop - thought this was part of prelude?
 (add-hook 'ruby-mode-hook 'rubocop-mode)
 (add-hook 'haml-mode-hook 'rubocop-mode)
+
+;;handlebars
+(require 'handlebars-mode)
+(defun handlebars-mode-hook ()
+  (autoload 'handlebars-mode "handlebars-mode" nil t)
+  (add-to-list 'auto-mode-alist '("\\.handlebars\\'" . handlebars-mode))
+  (add-to-list 'auto-mode-alist '("\.handlebars\.erb$" . handlebars-mode)))
+
+
+;;jsx mode
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
+(autoload 'jsx-mode "jsx-mode" "JSX mode" t)

@@ -22,6 +22,7 @@
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)  ;prelude already provides -- redundant
 (setq javascript-indent-level 2)
+(setq js-indent-level 2)
 (setq ring-bell-function 'ignore)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
@@ -159,5 +160,9 @@
 ;; '(linum ((t (:background "brightblack" :foreground "black")))))
 
 
-;;(require 'multi-term)
-;;(setq multi-term-program "/bin/bash")
+(require 'multi-term)
+(setq multi-term-program "/bin/bash")
+
+
+;; ecb deactivate hook
+(add-hook 'ecb-deactivate-hook '(lambda () (ecb-disable-advices 'ecb-winman-not-supported-function-advices t)))
