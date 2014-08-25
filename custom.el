@@ -18,6 +18,9 @@
  '(javascript-indent-level 2)
  '(js-indent-level 2)
  '(jsx-indent-level 2)
+ '(jsx-syntax-check-mode "compile")
+ '(jsx-use-auto-complete nil)
+ '(jsx-use-flymake t)
  '(line-number-mode 1)
  '(locale-coding-system (quote utf-8) t)
  '(menu-bar-mode nil)
@@ -61,7 +64,10 @@
      (320 . "#8CD0D3")
      (340 . "#94BFF3")
      (360 . "#DC8CC3"))))
- '(vc-annotate-very-old-color "#DC8CC3"))
+ '(vc-annotate-very-old-color "#DC8CC3")
+ '(web-mode-code-indent-offset 2)
+ '(web-mode-enable-auto-indentation t)
+ '(web-mode-markup-indent-offset 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
