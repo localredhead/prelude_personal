@@ -50,14 +50,6 @@
 ;;Let SQL buffer wrap and turn off line numbers / line highlight
 (add-hook 'sql-interactive-mode-hook (lambda () (visual-line-mode 1)))
 
-;;highlight indentation
-(add-hook 'ruby-mode-hook 'highlight-indentation-mode)
-(add-hook 'js2-mode-hook 'highlight-indentation-mode)
-(add-hook 'haml-mode-hook 'highlight-indentation-mode)
-(add-hook 'slim-mode-hook 'highlight-indentation-mode)
-(add-hook 'handlebars-mode-hook 'highlight-indentation-mode)
-(add-hook 'jsx-mode-hook 'highlight-indentation-mode)
-
 ;;allows access to pry from rinari web server buffer
 (defun pry-jack-in ()
   (interactive)
@@ -84,6 +76,14 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 
+;;highlight indentation
+(add-hook 'ruby-mode-hook 'highlight-indentation-mode)
+(add-hook 'js2-mode-hook 'highlight-indentation-mode)
+(add-hook 'haml-mode-hook 'highlight-indentation-mode)
+(add-hook 'slim-mode-hook 'highlight-indentation-mode)
+(add-hook 'handlebars-mode-hook 'highlight-indentation-mode)
+(add-hook 'web-mode-hook 'highlight-indentation-mode)
+
 ;;;;;  Deprecating the following
 ;===========================================================
 ;; (prelude-require-package 'rhtml-mode)
@@ -93,6 +93,7 @@
 ;;jsx mode
 ;; (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
 ;; (autoload 'jsx-mode "jsx-mode" "JSX mode" t)
+;; (add-hook 'jsx-mode-hook 'highlight-indentation-mode)
 
 ;;RHTML mode  ;todo swap this for web mode
 ;; (autoload 'rhtml-mode "rhtml-mode" nil t)
@@ -107,4 +108,3 @@
 ;; (require 'robe)
 ;; (add-hook 'ruby-mode-hook 'setup-robe)
 ;(push 'company-robe company-backends)
-

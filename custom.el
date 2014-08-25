@@ -65,7 +65,6 @@
      (340 . "#94BFF3")
      (360 . "#DC8CC3"))))
  '(vc-annotate-very-old-color "#DC8CC3")
- '(web-mode-code-indent-offset 2)
  '(web-mode-enable-auto-indentation t)
  '(web-mode-markup-indent-offset 2))
 (custom-set-faces
