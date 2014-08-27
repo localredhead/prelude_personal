@@ -89,3 +89,8 @@
 
 ;; ecb deactivate hook
 (add-hook 'ecb-deactivate-hook '(lambda () (ecb-disable-advices 'ecb-winman-not-supported-function-advices t)))
+
+;;truncate lines for SQL buffers
+(add-hook 'sql-interactive-mode-hook
+          (lambda ()
+            (toggle-truncate-lines t)))
