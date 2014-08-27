@@ -87,6 +87,5 @@
 (require 'multi-term)
 (setq multi-term-program "/bin/bash")
 
-
 ;; ecb deactivate hook
 (add-hook 'ecb-deactivate-hook '(lambda () (ecb-disable-advices 'ecb-winman-not-supported-function-advices t)))

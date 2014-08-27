@@ -1,4 +1,6 @@
-(prelude-require-packages '(rspec-mode bundler rsense rbenv rubocop web-mode handlebars-mode))
+(prelude-require-packages '(rspec-mode bundler rsense rbenv rubocop handlebars-mode projectile-rails js2-refactor tern company-tern))
+
+;;npm install tern jsxhint jshint
 
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
@@ -68,13 +70,14 @@
 
 ;;web mode
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.[gj]sp\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-hook 'web-mode-hook
+          (lambda ()
+            ;; enable flycheck
+            (flycheck-select-checker 'jsxhint-checker)
+            (flycheck-mode)))
+
 
 ;;highlight indentation
 (add-hook 'ruby-mode-hook 'highlight-indentation-mode)
@@ -83,6 +86,32 @@
 (add-hook 'slim-mode-hook 'highlight-indentation-mode)
 (add-hook 'handlebars-mode-hook 'highlight-indentation-mode)
 (add-hook 'web-mode-hook 'highlight-indentation-mode)
+
+;;jsxhint
+(flycheck-define-checker jsxhint-checker
+  "JSXHint syntax checker"
+  :command ("jsxhint" source)
+  :error-patterns
+  ((error line-start (1+ nonl) ": line " line ", col " column ", " (message) line-end))
+  :modes (web-mode))
+
+;;projectile-rails
+(add-hook 'projectile-mode-hook 'projectile-rails-on)
+
+;;enable tern
+(autoload 'tern-mode "tern.el" nil t)
+
+;;robe - provides alot of IDE functionality
+(defun setup-robe ()
+  (robe-mode 1)
+  (robe-start))
+(require 'robe)
+(add-hook 'ruby-mode-hook 'setup-robe)
+
+;;company robe / tern
+(push 'company-robe company-backends)
+(push 'company-tern company-backends)
+
 
 ;;;;;  Deprecating the following
 ;===========================================================
@@ -100,11 +129,3 @@
 ;; (add-to-list 'auto-mode-alist '("\\.erb\\'" . rhtml-mode))
 ;; (add-hook 'rhtml-mode '(lambda () (define-key rhtml-mode-map (kbd "M-s") 'save-buffer)))
 ;; (add-hook 'rhtml-mode-hook 'highlight-indentation-mode)
-
-;;robe - provides alot of IDE functionality
-;; (defun setup-robe ()
-;;   (robe-mode 1)
-;;   (robe-start))
-;; (require 'robe)
-;; (add-hook 'ruby-mode-hook 'setup-robe)
-;(push 'company-robe company-backends)
