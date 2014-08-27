@@ -99,7 +99,9 @@
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
 
 ;;enable tern
-(autoload 'tern-mode "tern.el" nil t)
+;(autoload 'tern-mode "tern.el" nil t)
+(add-hook 'web-mode-hook (lambda () (tern-mode t)))
+(add-hook 'js-mode-hook (lambda () (tern-mode t)))
 
 ;;robe - provides alot of IDE functionality
 (defun setup-robe ()

@@ -1,6 +1,8 @@
 (prelude-require-packages '(fixmee highlight-indentation eproject smart-mode-line nav hlinum restclient twittering-mode powerline))
 (prelude-require-package 'ecb)
 
+(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
+
 (require 'server)
 (unless (server-running-p)
   (server-start))
