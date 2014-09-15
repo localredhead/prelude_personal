@@ -93,6 +93,12 @@
 (add-hook 'ecb-deactivate-hook '(lambda () (ecb-disable-advices 'ecb-winman-not-supported-function-advices t)))
 
 ;;truncate lines for SQL buffers
-(add-hook 'sql-interactive-mode-hook
-          (lambda ()
-            (toggle-truncate-lines t)))
+;; (add-hook 'sql-interactive-mode-hook
+;;           (lambda ()
+;;             (toggle-truncate-lines t)))
+
+;;Let SQL buffer wrap and turn off line numbers / line highlight
+(add-hook 'sql-interactive-mode-hook (lambda () (visual-line-mode 1)))
+
+;;autoload anything that ends in .restclient
+(add-to-list 'auto-mode-alist '("\\.restclient\\'" . restclient-mode))

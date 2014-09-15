@@ -18,6 +18,7 @@
  '(indent-tabs-mode nil)
  '(javascript-indent-level 2)
  '(js-indent-level 2)
+ '(js2-basic-offset 2)
  '(line-number-mode 1)
  '(locale-coding-system (quote utf-8) t)
  '(menu-bar-mode nil)

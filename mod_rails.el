@@ -1,5 +1,5 @@
-(prelude-require-packages '(rspec-mode bundler rsense rbenv rubocop handlebars-mode projectile-rails js2-refactor tern company-tern))
-
+(prelude-require-packages '(rspec-mode bundler rsense rbenv rubocop handlebars-mode projectile-rails js2-mode js2-refactor tern company-tern))
+(prelude-require-package 'robe)
 ;;npm install tern jsxhint jshint
 
 (add-to-list 'load-path "~/.emacs.d/vendor")
@@ -49,9 +49,6 @@
 ;;the emacs process.  To avoid it, let the lines wrap.
 (add-hook 'inf-ruby-mode-hook (lambda () (visual-line-mode 1)))
 
-;;Let SQL buffer wrap and turn off line numbers / line highlight
-(add-hook 'sql-interactive-mode-hook (lambda () (visual-line-mode 1)))
-
 ;;allows access to pry from rinari web server buffer
 (defun pry-jack-in ()
   (interactive)
@@ -78,14 +75,21 @@
             (flycheck-select-checker 'jsxhint-checker)
             (flycheck-mode)))
 
+;;js2-mode
+(autoload 'js2-mode "js2-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(add-hook 'js-mode-hook 'js2-minor-mode) ;incase JS-mode is loaded first, fallback to js2-minor-mode
+;(add-to-list 'auto-mode-alist (cons (rx ".js" eos) 'js2-mode))
 
 ;;highlight indentation
 (add-hook 'ruby-mode-hook 'highlight-indentation-mode)
 (add-hook 'js2-mode-hook 'highlight-indentation-mode)
+(add-hook 'js-mode-hook 'highlight-indentation-mode)  ;js mode fallback if js2-mode isn't enabled
 (add-hook 'haml-mode-hook 'highlight-indentation-mode)
 (add-hook 'slim-mode-hook 'highlight-indentation-mode)
 (add-hook 'handlebars-mode-hook 'highlight-indentation-mode)
 (add-hook 'web-mode-hook 'highlight-indentation-mode)
+(add-hook 'scss-mode-hook 'highlight-indentation-mode)
 
 ;;jsxhint
 (flycheck-define-checker jsxhint-checker
@@ -102,13 +106,17 @@
 ;(autoload 'tern-mode "tern.el" nil t)
 (add-hook 'web-mode-hook (lambda () (tern-mode t)))
 (add-hook 'js-mode-hook (lambda () (tern-mode t)))
+(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 
 ;;robe - provides alot of IDE functionality
 (defun setup-robe ()
   (robe-mode 1)
   (robe-start))
 (require 'robe)
-(add-hook 'ruby-mode-hook 'setup-robe)
+;(add-hook 'ruby-mode-hook 'setup-robe)
+;; (add-hook 'ruby-mode-hook
+;;           (lambda ()
+;;             (lambda () (run-at-time 5 nil (setup-robe)))))
 
 ;;company robe / tern
 (push 'company-robe company-backends)
@@ -119,7 +127,6 @@
 ;===========================================================
 ;; (prelude-require-package 'rhtml-mode)
 ;; (prelude-require-package 'jsx-mode)
-;; (prelude-require-package 'robe)
 
 ;;jsx mode
 ;; (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
