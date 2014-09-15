@@ -108,6 +108,11 @@
 (add-hook 'js-mode-hook (lambda () (tern-mode t)))
 (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 
+;;refresh tern
+(defun delete-tern-process ()
+  (interactive)
+  (delete-process "Tern"))
+
 ;;robe - provides alot of IDE functionality
 (defun setup-robe ()
   (robe-mode 1)
@@ -129,6 +134,7 @@
 ;; (prelude-require-package 'jsx-mode)
 
 ;;jsx mode
+;;deprecation reason:  web-mode is better for React.js work w/ jsx files.
 ;; (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
 ;; (autoload 'jsx-mode "jsx-mode" "JSX mode" t)
 ;; (add-hook 'jsx-mode-hook 'highlight-indentation-mode)
