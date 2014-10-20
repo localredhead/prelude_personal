@@ -1,6 +1,6 @@
 (prelude-require-packages '(rspec-mode bundler rsense rbenv rubocop handlebars-mode projectile-rails js2-mode js2-refactor tern company-tern))
 (prelude-require-package 'robe)
-;;npm install tern jsxhint jshint
+;;npm install tern jsxhint jshint    ** muy importante!
 
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
@@ -48,6 +48,8 @@
 ;;There is a problem with C-e inside inf-ruby processes and it crashes
 ;;the emacs process.  To avoid it, let the lines wrap.
 (add-hook 'inf-ruby-mode-hook (lambda () (visual-line-mode 1)))
+;;except for when highlight-indentation is in scope
+(add-hook 'highlight-indentation-mode-hook (lambda () (toggle-truncate-lines)))
 
 ;;allows access to pry from rinari web server buffer
 (defun pry-jack-in ()

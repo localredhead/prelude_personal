@@ -1,4 +1,4 @@
-(prelude-require-packages '(fixmee highlight-indentation eproject smart-mode-line nav hlinum restclient twittering-mode powerline))
+(prelude-require-packages '(fixmee highlight-indentation eproject smart-mode-line nav hlinum restclient twittering-mode powerline json-mode))
 (prelude-require-package 'ecb)
 
 (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
@@ -102,3 +102,11 @@
 
 ;;autoload anything that ends in .restclient
 (add-to-list 'auto-mode-alist '("\\.restclient\\'" . restclient-mode))
+;;restclient response buffer is called *HTTP Response*
+(defun fix-restclient ()
+  (js2-mode 0)
+  (js-mode 0)
+  (javascript-mode 0)
+  (json-mode 1))
+
+(add-to-list 'auto-mode-alist '("^\\*HTTP Response\\*$" . 'fix-restclient))

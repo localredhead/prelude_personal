@@ -3,6 +3,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(TeX-auto-save t)
+ '(auto-save-file-name-transforms
+   (quote
+    ((".*" "/var/folders/nr/w1wqbdbd3lzf7t0rxs0py36m0000gn/T/" t))))
+ '(auto-save-interval 20)
+ '(auto-save-timeout 1)
  '(blink-cursor-mode t)
  '(c-basic-indent 2)
  '(column-number-mode 1)
