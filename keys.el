@@ -8,7 +8,7 @@
 ;;Helm Cmd T
 ;;install from melpa
 (require 'helm-cmd-t)
-(global-set-key (kbd "M-t") 'helm-prelude)
+(global-set-key (kbd "M-t") 'helm-projectile)
 ;; (global-set-key (kbd "M-z") ')
 ;(global-s<et-key (kbd "M-t") 'helm-for-files)
 ;(global-set-key [remap find-tag] 'helm-etags-select)
@@ -42,3 +42,8 @@
 (global-set-key (kbd "C-x C-2") 'split-window-below)
 (global-set-key (kbd "C-x C-3") 'split-window-right)
 (global-set-key (kbd "C-x C-0") 'delete-window)
+
+
+(require 'tabbar)
+(global-set-key [M-left] 'tabbar-backward-tab)
+(global-set-key [M-right] 'tabbar-forward-tab)

@@ -43,3 +43,8 @@
 ;; '(hl-line ((t (:inherit highlight :background "black" :underline nil))))
 ;; '(linum ((t (:background "brightblack" :foreground "black")))))
 
+;;highlight indentation
+;;install from melpa
+;; ;uncomment for solarized
+;;(set-face-background 'highlight-indentation-face "#000000")
+;;(set-face-background 'highlight-indentation-current-column-face "#000000")

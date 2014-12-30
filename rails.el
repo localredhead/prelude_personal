@@ -1,6 +1,7 @@
 (prelude-require-packages '(rspec-mode bundler rsense rbenv rubocop handlebars-mode projectile-rails js2-mode js2-refactor tern company-tern))
 (prelude-require-package 'robe)
-;;npm install tern jsxhint jshint    ** muy importante!
+
+;;npm install tern jsxhint jshint ** muy importante!
 
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
@@ -13,30 +14,6 @@
 (setq rbenv-show-active-ruby-in-modeline nil)
 (global-rbenv-mode)
 (rbenv-use-global)
-
-; Set Tags in root of rails dirs
-; for ubuntu: ctags-exuberant -a -e -f TAGS --tag-relative -R app lib spec config bin vendor
-; for osx: *compile ctags from source:  export CFLAGS=-O0 ;https://trac.macports.org/ticket/31256
-                                         ;Also make sure you are not compiling with llvm
-;      export PATH="/usr/local/bin:$PATH"  (after brew install ctags-excuberant)
-; generate tags for ruby gems using bundler(this is the holy grail of ctags generation)
-;    bundle show --paths | xargs  ctags-exuberant -a -e -f TAGS --tag-relative -R app lib spec config bin vendor
-; (you may need to delete osx ctags)
-; (try just ctags on osx.)
-(defun build-ruby-ctags ()
-  (interactive)
-  (message "building project tags")
-  (let ((root (eproject-root)))
-    (shell-command (concat "bundle show --paths | xargs  ctags -a -e -f TAGS --tag-relative -R app lib spec config bin")))
-  (visit-project-tags)
-  (message "tags built successfully"))
-(setq tags-case-fold-search t)
-(setq tags-revert-without-query 1) ;to avoid being asked to load the file.
-(defun visit-project-tags ()
-  (interactive)
-  (let ((tags-file (concat (eproject-root) "TAGS")))
-    (visit-tags-table tags-file)
-    (message (concat "Loaded " tags-file))))
 
 ;;rspec
 (setq rspec-use-opts-file-when-available nil)
@@ -70,7 +47,7 @@
 ;;web mode
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.dhtml\\'" . web-mode))
 (add-hook 'web-mode-hook
           (lambda ()
             ;; enable flycheck
