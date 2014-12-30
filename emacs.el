@@ -16,5 +16,6 @@
           'comint-strip-ctrl-m)
 
 ;;powerline and smart-mode-line combined.
+(require 'powerline)
 (powerline-center-theme)
 (sml/setup)
