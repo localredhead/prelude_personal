@@ -57,6 +57,9 @@
  '(setq-default truncate-lines t)
  '(show-paren-mode t)
  '(tab-width 2)
+ '(tabbar-background-color "color-235")
+ '(tabbar-mode t nil (tabbar))
+ '(tabbar-separator (quote ("|")))
  '(tool-bar-mode nil)
  '(url-proxy-services (quote (("https" . "127.0.0.1:8888"))))
  '(utf-translate-cjk-mode nil)
@@ -88,4 +91,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(highlight-indentation-current-column-face ((t (:background "black"))))
- '(highlight-indentation-face ((t (:background "black")))))
+ '(highlight-indentation-face ((t (:background "black"))))
+ '(hl-line ((t (:stipple nil :background "black"))))
+ '(tabbar-modified ((t (:background "brightred"))))
+ '(tabbar-selected ((t (:background "cyan" :foreground "black"))))
+ '(tabbar-separator ((t (:background "yellow" :foreground "brightblack")))))
