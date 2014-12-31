@@ -18,4 +18,4 @@
 ;;powerline and smart-mode-line combined.
 (require 'powerline)
 (powerline-center-theme)
-(sml/setup)
+(sml/setup)  ;; this causes issues.  execute by hand and restart for random load issues
