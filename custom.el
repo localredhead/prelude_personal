@@ -95,6 +95,7 @@
  '(highlight-indentation-current-column-face ((t (:background "black"))))
  '(highlight-indentation-face ((t (:background "black"))))
  '(hl-line ((t (:stipple nil :background "black"))))
+ '(tabbar-default ((t (:inherit variable-pitch :background "gray75" :foreground "gray50" :height 0.8))))
  '(tabbar-modified ((t (:background "brightred"))))
  '(tabbar-selected ((t (:background "cyan" :foreground "black"))))
  '(tabbar-separator ((t (:background "yellow" :foreground "brightblack")))))

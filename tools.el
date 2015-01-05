@@ -51,7 +51,6 @@
 ;;Let SQL buffer wrap and turn off line numbers / line highlight
 (add-hook 'sql-interactive-mode-hook (lambda () (visual-line-mode 1)))
 
-
 ; Set Tags in root of rails dirs
 ; for ubuntu: ctags-exuberant -a -e -f TAGS --tag-relative -R app lib spec config bin vendor
 ; for osx: *compile ctags from source:  export CFLAGS=-O0 ;https://trac.macports.org/ticket/31256
@@ -75,3 +74,11 @@
   (let ((tags-file (concat (eproject-root) "TAGS")))
     (visit-tags-table tags-file)
     (message (concat "Loaded " tags-file))))
+
+
+; Turn off truncate line mode for inf-ruby processes.
+; There is a problem with C-e inside inf-ruby processes and it crashes
+; the emacs process.  To avoid it, let the lines wrap.
+(add-hook 'inf-ruby-mode-hook (lambda () (visual-line-mode 1)))
+; except for when highlight-indentation is in scope
+(add-hook 'highlight-indentation-mode-hook (lambda () (toggle-truncate-lines)))
