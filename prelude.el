@@ -1,12 +1,12 @@
 (prelude-require-packages '(color-theme-solarized helm-ag))
-(disable-theme 'zenburn)
+;(disable-theme 'zenburn)
 (setq prelude-whitespace nil)
 (setq prelude-guru nil)
-(load-theme 'solarized-dark t)
+;(load-theme 'solarized-dark t)
 ;(load-theme 'cyberpunk t)
 
 ;; Solarized settings
-(setq solarized-broken-srgb t)
+;(setq solarized-broken-srgb t)
 
 ;;color themes to try
 ;https://github.com/bruce/emacs-spacegray-theme
