@@ -16,6 +16,6 @@
           'comint-strip-ctrl-m)
 
 ;;powerline and smart-mode-line combined.
-(require 'powerline)
-(powerline-center-theme)
+;; (require 'powerline)
+;; (powerline-revert)
 (sml/setup)  ;; this causes issues.  execute by hand and restart for random load issues
