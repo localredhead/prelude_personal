@@ -15,7 +15,6 @@
 ;https://github.com/chriskempson/base16
 ;(setq flx-ido-threshhold 1000)
 ;;(flx-ido-mode -1)         ;;turn threshold off if this is enabled
-(setq projectile-enable-caching t)
-;;(setq projectile-global-mode t)  ;; provided by prelude
 (setq company-begin-commands '(self-insert-command))
 (setq aw-scope 'frame)
+

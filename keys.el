@@ -20,7 +20,7 @@
 (key-chord-define-global "kk" 'kill-whole-line)
 
 (require 'multi-term)
-(key-chord-define-global "td" 'multi-term-dedicated-toggle)
+(key-chord-define-global "TT" 'multi-term-dedicated-toggle)
 (key-chord-define-global "@@" 'ecb-activate)
 (key-chord-define-global "!!" 'ecb-deactivate)
 
