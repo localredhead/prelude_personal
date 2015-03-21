@@ -1,4 +1,3 @@
-(prelude-require-packages '(color-theme-solarized helm-ag))
 ;(disable-theme 'zenburn)
 (setq prelude-whitespace nil)
 (setq prelude-guru nil)

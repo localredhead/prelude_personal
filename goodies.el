@@ -1,12 +1,9 @@
-(prelude-require-package 'multi-term)
 (setq multi-term-program "/bin/bash")
-
-(prelude-require-package 'twittering-mode)
 (setq twittering-use-master-password t)
-
-(prelude-require-package 'tabbar)
-
-(prelude-require-package 'ecb)
-
-(prelude-require-package 'fixmee)
-(global-fixmee-mode 1)
+;(global-fixmee-mode 1)
+;;higlight current linenumber
+(hlinum-activate)
+;;powerline and smart-mode-line combined.
+;; (require 'powerline)
+;; (powerline-revert)
+;(sml/setup)  ;; this causes issues.  execute by hand and restart for random load issues

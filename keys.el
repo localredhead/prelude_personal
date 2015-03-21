@@ -1,6 +1,3 @@
-(prelude-require-packages '(nav god-mode))
-(prelude-require-package 'helm-cmd-t)
-
 ;; (ac-set-trigger-key "TAB")
 ;; (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
 (global-set-key (kbd "M-TAB") 'company-complete)

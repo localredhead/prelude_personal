@@ -1,5 +1,3 @@
-(prelude-require-packages '(restclient json-mode))
-
 ;;autoload anything that ends in .restclient
 (add-to-list 'auto-mode-alist '("\\.restclient\\'" . restclient-mode))
 

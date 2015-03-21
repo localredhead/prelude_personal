@@ -1,13 +1,8 @@
-(prelude-require-packages '(rspec-mode bundler rsense rbenv rubocop projectile-rails))
-(prelude-require-package 'robe)
-
-(add-to-list 'load-path "~/.emacs.d/vendor")
-
 ;;rsense
 (setq rsense-home "/usr/local/bin/rsense")
 (add-to-list 'load-path (concat rsense-home "/etc"))
 
-;;rbenv
+;;rbenv - sorry if you use rvm!
 (setq rbenv-executable "/usr/local/bin/rbenv")
 (setq rbenv-show-active-ruby-in-modeline nil)
 (global-rbenv-mode)
@@ -33,20 +28,24 @@
 ;;projectile-rails
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
 
-;;robe - provides alot of IDE functionality
+;; ROBE
+;; provides alot of IDE functionality
 (defun setup-robe ()
   (robe-mode 1)
   (robe-start))
 (require 'robe)
-;(add-hook 'ruby-mode-hook 'setup-robe)
-;; (add-hook 'ruby-mode-hook
-;;           (lambda ()
-;;             (lambda () (run-at-time 5 nil (setup-robe)))))
+
+;; ;; Un-comment to enable robe automatically.
+;; ;; Caution: can be problematic like this.
+;; ;; (needs work maybe?)
+;; (add-hook 'ruby-mode-hook 'setup-robe)
+;; (add-hook 'ruby-mode-hook (lambda () (lambda () (run-at-time 5 nil (setup-robe)))))
 
 ;;company robe
 (push 'company-robe company-backends)
+(add-hook 'after-init-hook 'inf-ruby-switch-setup)
 
-;;;;;  Deprecating the following
+;;;;;  Deprecating the following 
 ;===========================================================
 ;; (prelude-require-package 'rhtml-mode)
 ;; (prelude-require-package 'jsx-mode)
