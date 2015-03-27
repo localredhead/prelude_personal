@@ -21,7 +21,7 @@
  '(cursor-color "#626262")
  '(custom-safe-themes
    (quote
-    ("fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" default)))
+    ("f0b0710b7e1260ead8f7808b3ee13c3bb38d45564e369cbe15fc6d312f0cd7a0" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" default)))
  '(ecb-options-version "2.40")
  '(ecb-source-path (quote (("/" "/"))))
  '(ecb-windows-width 0.25)
@@ -42,14 +42,28 @@
  '(line-number-mode 1)
  '(locale-coding-system (quote utf-8) t)
  '(menu-bar-mode nil)
+ '(mode-line-default-help-echo nil)
+ '(mode-line-format
+   (quote
+    ("%e" mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote mode-line-frame-identification mode-line-buffer-identification sml/pos-id-separator mode-line-position smartrep-mode-line-string
+     (vc-mode vc-mode)
+     sml/pre-modes-separator mode-line-misc-info mode-line-end-spaces)))
  '(mode-line-in-non-selected-windows t)
- '(nav-width 39)
+ '(nav-width 30)
  '(ns-pop-up-frames nil)
+ '(package-selected-packages
+   (quote
+    (yaml-mode web-mode scss-mode geiser yari inf-ruby ruby-tools company-auctex cdlatex auctex json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters coffee-mode key-chord company helm-ag helm-descbinds helm-projectile helm smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char zenburn-theme volatile-highlights undo-tree smartrep smartparens operate-on-number move-text magit projectile ov guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major browse-kill-ring anzu ace-window ace-jump-buffer ace-jump-mode)))
+ '(powerline-height 0)
+ '(powerline-text-scale-factor nil)
  '(prefer-coding-system (quote utf-8))
  '(projectile-global-mode t)
  '(projectile-switch-project-action (quote projectile-dired))
+ '(rbenv-show-active-ruby-in-modeline t)
  '(redisplay-dont-pause t t)
- '(ring-bell-function (quote ignore) t)
+ '(ring-bell-function (quote ignore))
+ '(rspec-use-bundler-when-possible nil)
+ '(rspec-use-zeus-when-possible nil)
  '(ruby-insert-encoding-magic-comment nil)
  '(scroll-conservatively 10000)
  '(scroll-margin 1)
@@ -99,7 +113,7 @@
  '(web-mode-attr-indent-offset 2)
  '(web-mode-code-indent-offset 2)
  '(web-mode-css-indent-offset 2)
- '(web-mode-enable-auto-indentation t)
+ '(web-mode-enable-auto-indentation nil)
  '(web-mode-enable-current-column-highlight nil)
  '(web-mode-enable-current-element-highlight nil)
  '(web-mode-enable-engine-detection t)

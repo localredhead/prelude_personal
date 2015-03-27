@@ -1,5 +1,3 @@
-(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
-
 (require 'server)
 (unless (server-running-p)
   (server-start))

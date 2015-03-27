@@ -1,9 +1,13 @@
-(prelude-require-packages '(highlight-indentation
+(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
+(add-to-list 'load-path "~/.emacs.d/vendor")
+(prelude-require-packages '(eproject
+                            highlight-indentation
                             nav
                             hlinum
                             powerline
                             smart-mode-line
                             sml-mode
+                            smart-mode-line-powerline-theme
                             god-mode
                             multi-term
                             helm-cmd-t
@@ -38,4 +42,3 @@
 ;; (prelude-require-package 'tabbar)
 ;; (prelude-require-package 'ecb)
 ;; (prelude-require-package 'fixmee)
-(add-to-list 'load-path "~/.emacs.d/vendor")

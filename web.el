@@ -21,7 +21,11 @@
   :error-patterns
   ((error line-start (1+ nonl) ": line " line ", col " column ", " (message) line-end))
   :modes (web-mode))
-(add-to-list 'flycheck-checkers 'jsxhint-checker)
+(add-hook 'web-mode-hook (lambda () ;; enable jsxhint/flycheck
+                           (when (equal web-mode-content-type "jsx")
+                             (flycheck-select-checker 'jsxhint-checker)
+                             (flycheck-mode))))
+;; (add-to-list 'flycheck-checkers 'jsxhint-checker)
 
 ;; js2-mode
 (autoload 'js2-mode "js2-mode" nil t)
@@ -34,11 +38,15 @@
 (add-hook 'web-mode-hook (lambda () (tern-mode t)))
 (add-hook 'js-mode-hook (lambda () (tern-mode t)))
 (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
-;; (add-hook 'web-mode-hook (lambda () ;; enable jsxhint/flycheck
-;;                            (flycheck-select-checker 'jsxhint-checker)
-;;                            (flycheck-mode)))
+
+(eval-after-load 'tern
+  '(progn
+     (require 'company-tern)
+     (push 'company-tern company-backends)))
+
 ;; company tern
-(push 'company-tern company-backends)
+;(push 'company-tern company-backends)
+(add-to-list 'company-backends 'company-tern)
 
 ;; refresh tern if needed.  
 (defun delete-tern-process ()
