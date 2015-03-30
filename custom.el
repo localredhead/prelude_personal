@@ -8,10 +8,12 @@
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
+ '(auto-save-default nil)
  '(auto-save-file-name-transforms
    (quote
     ((".*" "/var/folders/nr/w1wqbdbd3lzf7t0rxs0py36m0000gn/T/" t))))
  '(auto-save-interval 20)
+ '(auto-save-list-file-prefix nil)
  '(auto-save-timeout 1)
  '(background-color "#ffffd7")
  '(background-mode light)
@@ -53,7 +55,7 @@
  '(ns-pop-up-frames nil)
  '(package-selected-packages
    (quote
-    (yaml-mode web-mode scss-mode geiser yari inf-ruby ruby-tools company-auctex cdlatex auctex json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters coffee-mode key-chord company helm-ag helm-descbinds helm-projectile helm smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char zenburn-theme volatile-highlights undo-tree smartrep smartparens operate-on-number move-text magit projectile ov guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major browse-kill-ring anzu ace-window ace-jump-buffer ace-jump-mode)))
+    (markdown-mode yaml-mode web-mode scss-mode geiser yari inf-ruby ruby-tools company-anaconda anaconda-mode json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters coffee-mode key-chord company helm-ag helm-descbinds helm-projectile helm smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char zenburn-theme volatile-highlights undo-tree smartrep smartparens operate-on-number move-text magit projectile ov guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major browse-kill-ring anzu ace-window ace-jump-buffer ace-jump-mode)))
  '(powerline-height 0)
  '(powerline-text-scale-factor nil)
  '(prefer-coding-system (quote utf-8))
@@ -62,8 +64,8 @@
  '(rbenv-show-active-ruby-in-modeline t)
  '(redisplay-dont-pause t t)
  '(ring-bell-function (quote ignore))
- '(rspec-use-bundler-when-possible nil)
- '(rspec-use-zeus-when-possible nil)
+ '(rspec-use-bundler-when-possible nil t)
+ '(rspec-use-zeus-when-possible nil t)
  '(ruby-insert-encoding-magic-comment nil)
  '(scroll-conservatively 10000)
  '(scroll-margin 1)
