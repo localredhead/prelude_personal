@@ -7,3 +7,6 @@
 ;; (require 'powerline)
 ;; (powerline-revert)
 ;(sml/setup)  ;; this causes issues.  execute by hand and restart for random load issues
+
+;; Access OSX clipboard
+(turn-on-pbcopy)

@@ -29,7 +29,8 @@
                             twittering-mode
                             tabbar
                             ecb
-                            fixmee))
+                            fixmee
+                            pbcopy))
 ;; (prelude-require-package 'multi-term)
 ;; (prelude-require-packages '(nav god-mode))
 ;; (prelude-require-package 'helm-cmd-t)
