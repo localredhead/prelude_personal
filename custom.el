@@ -57,9 +57,7 @@
  '(ns-pop-up-frames nil)
  '(package-selected-packages
    (quote
-    (yaml-mode web-mode scss-mode geiser yari inf-ruby ruby-tools company-anaconda anaconda-mode json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters coffee-mode key-chord company helm-ag helm-descbinds helm-projectile helm smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char zenburn-theme volatile-highlights undo-tree smartrep smartparens operate-on-number move-text magit projectile ov guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major browse-kill-ring anzu ace-window ace-jump-buffer ace-jump-mode)))
- '(powerline-height 0)
- '(powerline-text-scale-factor nil)
+    (eproject zop-to-char zenburn-theme yari yaml-mode web-mode volatile-highlights vkill undo-tree twittering-mode tabbar smex smartparens smart-mode-line slime scss-mode ruby-tools rubocop rspec-mode rsense robe restclient rbenv rainbow-mode rainbow-delimiters projectile-rails pbcopy ov operate-on-number neotree multi-term move-text magit key-chord json-mode js2-refactor ido-ubiquitous hlinum highlight-indentation helm-projectile helm-descbinds helm-cmd-t helm-ag handlebars-mode guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist geiser flycheck flx-ido fixmee expand-region exec-path-from-shell erlang elixir-mode elisp-slime-nav ecb easy-kill discover-my-major diminish diff-hl company-tern company-auctex company-anaconda coffee-mode cdlatex bundler browse-kill-ring anzu alchemist ace-window ace-jump-buffer)))
  '(prefer-coding-system (quote utf-8))
  '(projectile-global-mode t)
  '(projectile-switch-project-action (quote projectile-dired))

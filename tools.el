@@ -1,9 +1,11 @@
+(setq magit-last-seen-setup-instructions "1.4.0")
+
 (add-to-list 'semantic-default-submodes 'global-semantic-decoration-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-idle-local-symbol-highlight-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-idle-scheduler-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-idle-completions-mode)
 
-;;for GUI only
+;;GUI mode only
 (if (display-graphic-p)
     (progn (scroll-bar-mode -1)
            (highlight-changes-mode t)
@@ -72,7 +74,7 @@
 (add-hook 'sql-interactive-mode-hook (lambda () (visual-line-mode 1)))
 (add-hook 'inf-ruby-mode-hook (lambda () (visual-line-mode 1)))
 (add-hook 'highlight-indentation-mode-hook (lambda () (setq truncate-lines t)))
-
+(add-hook 'inf-ruby-mode-hook (lambda () (company-mode)))
 ;; Deprecating the following snippets in favor of implementations above.
 ;; =====================================================================
 ;; truncate lines for SQL buffers

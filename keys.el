@@ -12,12 +12,15 @@
 
 (defalias 'list-buffers 'ibuffer) ;use ibuffer instead of list-buffer
 
-(require 'nav)
-(key-chord-define-global "nj" 'nav-toggle)
+;;access neotree quickly
+(key-chord-define-global "nj" 'neotree-toggle)
 (key-chord-define-global "kk" 'kill-whole-line)
 
-(require 'multi-term)
+;;get a term buffer quickly
 (key-chord-define-global "TT" 'multi-term-dedicated-toggle)
+
+;;enable ECB if needed.
+;;Disable it quickly.
 (key-chord-define-global "@@" 'ecb-activate)
 (key-chord-define-global "!!" 'ecb-deactivate)
 
@@ -32,14 +35,6 @@
 ;; (global-set-key (kbd "M-<down>") 'windmove-down)
 ;; (global-set-key (kbd "M-<right>") 'windmove-right)
 ;; (global-set-key (kbd "M-<left>") 'windmove-left)
-
-(require 'god-mode)
-(global-set-key (kbd "<escape>") 'god-mode-all)
-(global-set-key (kbd "C-x C-1") 'delete-other-windows)
-(global-set-key (kbd "C-x C-2") 'split-window-below)
-(global-set-key (kbd "C-x C-3") 'split-window-right)
-(global-set-key (kbd "C-x C-0") 'delete-window)
-
 
 (require 'tabbar)
 (global-set-key [M-left] 'tabbar-backward-tab)

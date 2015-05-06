@@ -45,7 +45,7 @@
 (push 'company-robe company-backends)
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
 
-;;;;;  Deprecating the following 
+;;;;;  Deprecating the following
 ;===========================================================
 ;; (prelude-require-package 'rhtml-mode)
 ;; (prelude-require-package 'jsx-mode)
