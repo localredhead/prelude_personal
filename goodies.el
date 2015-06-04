@@ -10,3 +10,6 @@
 
 ;; Access OSX clipboard
 (turn-on-pbcopy)
+
+;;Perspective
+(persp-mode)

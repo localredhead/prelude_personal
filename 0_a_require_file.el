@@ -26,7 +26,8 @@
                             ecb
                             fixmee
                             pbcopy
-                            eproject))
+                            eproject
+                            perspective))
 
 
 
