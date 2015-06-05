@@ -13,7 +13,7 @@
 (defalias 'list-buffers 'ibuffer) ;use ibuffer instead of list-buffer
 
 ;;access neotree quickly
-(key-chord-define-global "nj" 'neotree-find)
+(key-chord-define-global "nj" 'neotree-toggle)
 (key-chord-define-global "kk" 'kill-whole-line)
 
 ;;get a term buffer quickly
