@@ -16,7 +16,6 @@
                             restclient
                             json-mode
                             handlebars-mode
-                            js2-mode
                             js2-refactor
                             tern
                             company-tern
