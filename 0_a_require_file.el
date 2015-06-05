@@ -6,7 +6,6 @@
                             smart-mode-line
                             multi-term
                             helm-cmd-t
-                            helm-ag
                             rspec-mode
                             bundler
                             rsense
