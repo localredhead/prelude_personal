@@ -1,5 +1,5 @@
 ;(disable-theme 'zenburn)
-(setq prelude-whitespace nil)
+;(setq prelude-whitespace nil)
 (setq prelude-guru nil)
 ;(load-theme 'solarized-dark t)
 ;(load-theme 'cyberpunk t)
