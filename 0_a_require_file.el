@@ -25,7 +25,9 @@
                             fixmee
                             pbcopy
                             eproject
-                            perspective))
+                            perspective
+                            vagrant
+                            vagrant-tramp))
 
 
 

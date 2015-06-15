@@ -42,7 +42,8 @@
 ;; (add-hook 'ruby-mode-hook (lambda () (lambda () (run-at-time 5 nil (setup-robe)))))
 
 ;;company robe
-(push 'company-robe company-backends)
+(eval-after-load 'company
+  '(push 'company-robe company-backends))
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
 
 ;;;;;  Deprecating the following

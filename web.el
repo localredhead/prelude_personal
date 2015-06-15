@@ -1,3 +1,4 @@
+
 ;; 3rd party deps can be installed with npm.
 ;; npm install tern jsxhint jshint
 ;; ** muy importante!
@@ -14,6 +15,7 @@
 ;(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 ;(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 
+(require 'flycheck)
 ;; jsxhint
 (flycheck-define-checker jsxhint-checker
   "JSXHint syntax checker"
@@ -45,7 +47,8 @@
      (push 'company-tern company-backends)))
 
 ;; company tern
-;(push 'company-tern company-backends)
+(require 'company)
+(push 'company-tern company-backends)
 (add-to-list 'company-backends 'company-tern)
 
 ;; refresh tern if needed.  
