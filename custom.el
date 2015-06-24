@@ -57,6 +57,8 @@
  '(mode-line-in-non-selected-windows t)
  '(nav-width 30)
  '(ns-pop-up-frames nil)
+ '(nxml-attribute-indent 2)
+ '(nxml-child-indent 2)
  '(package-selected-packages
    (quote
     (yaml-mode web-mode scss-mode geiser yari inf-ruby ruby-tools json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters coffee-mode key-chord company helm-ag helm-descbinds helm-projectile helm smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char zenburn-theme volatile-highlights undo-tree smartrep smartparens operate-on-number move-text magit projectile ov guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash browse-kill-ring anzu ace-window)))
