@@ -1,4 +1,3 @@
-
 ;; 3rd party deps can be installed with npm.
 ;; npm install tern jsxhint jshint
 ;; ** muy importante!
@@ -51,7 +50,7 @@
 (push 'company-tern company-backends)
 (add-to-list 'company-backends 'company-tern)
 
-;; refresh tern if needed.  
+;; refresh tern if needed.
 (defun delete-tern-process ()
   (interactive)
   (delete-process "Tern"))
@@ -65,4 +64,4 @@
 (add-hook 'handlebars-mode-hook 'highlight-indentation-mode)
 (add-hook 'web-mode-hook 'highlight-indentation-mode)
 (add-hook 'scss-mode-hook 'highlight-indentation-mode)
-(add-hook 'coffee-mode-hook 'highlight-indentation-mode)
+(add-hook 'php-mode-hook 'highlight-indentation-mode)
