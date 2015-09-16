@@ -65,15 +65,15 @@
  '(nxml-child-indent 2)
  '(package-selected-packages
    (quote
-    (markdown-mode haml-mode flymake-php php+-mode php-mode yaml-mode web-mode scss-mode geiser yari inf-ruby ruby-tools json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters coffee-mode key-chord company helm-ag helm-descbinds helm-projectile helm smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char zenburn-theme volatile-highlights undo-tree smartrep smartparens operate-on-number move-text magit projectile ov guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash browse-kill-ring anzu ace-window)))
+    (auctex avy bundler helm-cmd-t js2-refactor neotree perspective projectile-rails restclient robe slime smart-mode-line tern twittering-mode sass-mode markdown-mode haml-mode flymake-php php+-mode php-mode yaml-mode web-mode scss-mode geiser yari inf-ruby ruby-tools json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters coffee-mode key-chord company helm-ag helm-descbinds helm-projectile helm smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char zenburn-theme volatile-highlights undo-tree smartrep smartparens operate-on-number move-text magit projectile ov guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash browse-kill-ring anzu ace-window)))
  '(prefer-coding-system (quote utf-8))
  '(projectile-global-mode t)
  '(projectile-switch-project-action (quote projectile-dired))
  '(rbenv-show-active-ruby-in-modeline t)
  '(redisplay-dont-pause t t)
  '(ring-bell-function (quote ignore))
- '(rspec-use-bundler-when-possible nil)
- '(rspec-use-zeus-when-possible nil)
+ '(rspec-use-bundler-when-possible nil t)
+ '(rspec-use-zeus-when-possible nil t)
  '(ruby-insert-encoding-magic-comment nil)
  '(scroll-conservatively 10000)
  '(scroll-margin 1)
