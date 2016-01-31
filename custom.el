@@ -23,7 +23,7 @@
  '(cursor-color "#626262")
  '(custom-safe-themes
    (quote
-    ("282606e51ef2811142af5068bd6694b7cf643b27d63666868bc97d04422318c1" "90edd91338ebfdfcd52ecd4025f1c7f731aced4c9c49ed28cfbebb3a3654840b" "f0b0710b7e1260ead8f7808b3ee13c3bb38d45564e369cbe15fc6d312f0cd7a0" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" default)))
+    ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "282606e51ef2811142af5068bd6694b7cf643b27d63666868bc97d04422318c1" "90edd91338ebfdfcd52ecd4025f1c7f731aced4c9c49ed28cfbebb3a3654840b" "f0b0710b7e1260ead8f7808b3ee13c3bb38d45564e369cbe15fc6d312f0cd7a0" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" default)))
  '(diff-hl-margin-mode t)
  '(diff-hl-side (quote right))
  '(ecb-options-version "2.40")
@@ -37,7 +37,13 @@
  '(global-font-lock-mode 1)
  '(global-hl-line-mode t)
  '(global-linum-mode nil)
- '(grep-find-ignored-files nil)
+ '(gnus-treat-from-gravatar (quote head))
+ '(gnus-treat-mail-gravatar (quote head))
+ '(grep-find-ignored-directories
+   (quote
+    ("SCCS" "RCS" "CVS" "MCVS" ".src" ".svn" ".git" ".hg" ".bzr" "_MTN" "_darcs" "{arch}" "resources/public/js/dev")))
+ '(helm-ag-fuzzy-match t)
+ '(helm-ag-ignore-patterns nil)
  '(helm-ag-insert-at-point (quote symbol))
  '(helm-ag-use-grep-ignore-list t)
  '(helm-buffer-max-length 60)
@@ -51,6 +57,7 @@
  '(js-indent-level 2)
  '(line-number-mode 1)
  '(locale-coding-system (quote utf-8) t)
+ '(mail-source-delete-incoming nil)
  '(menu-bar-mode nil)
  '(mode-line-default-help-echo nil)
  '(mode-line-format
@@ -60,12 +67,13 @@
      sml/pre-modes-separator mode-line-misc-info mode-line-end-spaces)))
  '(mode-line-in-non-selected-windows t)
  '(nav-width 30)
+ '(nnimap-request-articles-find-limit 100)
  '(ns-pop-up-frames nil)
  '(nxml-attribute-indent 2)
  '(nxml-child-indent 2)
  '(package-selected-packages
    (quote
-    (auctex avy bundler helm-cmd-t js2-refactor neotree perspective projectile-rails restclient robe slime smart-mode-line tern twittering-mode sass-mode markdown-mode haml-mode flymake-php php+-mode php-mode yaml-mode web-mode scss-mode geiser yari inf-ruby ruby-tools json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters coffee-mode key-chord company helm-ag helm-descbinds helm-projectile helm smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char zenburn-theme volatile-highlights undo-tree smartrep smartparens operate-on-number move-text magit projectile ov guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash browse-kill-ring anzu ace-window)))
+    (clj-refactor slime cider zop-to-char zenburn-theme yari yaml-mode web-mode volatile-highlights vkill vagrant-tramp vagrant undo-tree twittering-mode tabbar spinner smex smartparens smart-mode-line scss-mode ruby-tools rubocop rspec-mode rsense robe restclient rbenv rainbow-mode rainbow-delimiters queue projectile-rails php-mode perspective pbcopy ov operate-on-number neotree multi-term move-text magit key-chord json-mode js2-refactor ido-ubiquitous hlinum highlight-indentation helm-projectile helm-descbinds helm-cmd-t helm-ag handlebars-mode haml-mode guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine git-rebase-mode git-commit-mode gist geiser flycheck flx-ido fixmee expand-region exec-path-from-shell eproject elisp-slime-nav ecb easy-kill discover-my-major diminish diff-hl company-tern color-theme-sanityinc-solarized coffee-mode clojure-mode bundler browse-kill-ring anzu ace-window)))
  '(prefer-coding-system (quote utf-8))
  '(projectile-global-mode t)
  '(projectile-switch-project-action (quote projectile-dired))
@@ -146,6 +154,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#3F3F3F" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "nil" :family "Input Mono"))))
+ '(cursor ((t (:background "Magenta" :foreground "Blue"))))
  '(flycheck-error-list-highlight ((t (:inherit default))))
  '(highlight-indentation-current-column-face ((t (:background "disabledControlTextColor"))))
  '(highlight-indentation-face ((t (:background "disabledControlTextColor"))))
