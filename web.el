@@ -71,3 +71,5 @@
 (add-hook 'web-mode-hook 'highlight-indentation-mode)
 (add-hook 'scss-mode-hook 'highlight-indentation-mode)
 (add-hook 'php-mode-hook 'highlight-indentation-mode)
+(add-hook 'clojure-mode-hook 'highlight-indentation-mode)
+(add-hook 'lisp-mode-hook 'highlight-indentation-mode)

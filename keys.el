@@ -13,16 +13,11 @@
 (defalias 'list-buffers 'ibuffer) ;use ibuffer instead of list-buffer
 
 ;;access neotree quickly
-(key-chord-define-global "nj" 'neotree-find)
+(key-chord-define-global "nj" 'neotree-toggle)
 (key-chord-define-global "kk" 'kill-whole-line)
 
 ;;get a term buffer quickly
 (key-chord-define-global "TT" 'multi-term-dedicated-toggle)
-
-;;enable ECB if needed.
-;;Disable it quickly.
-(key-chord-define-global "@@" 'ecb-activate)
-(key-chord-define-global "!!" 'ecb-deactivate)
 
 ;; (global-set-key (kbd "M-3") 'split-window-horizontally)
 ;; (global-set-key (kbd "M-4") 'split-window-vertically) ; split pane top/bottom

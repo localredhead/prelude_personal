@@ -21,7 +21,6 @@
                             company-tern
                             twittering-mode
                             tabbar
-                            ecb
                             fixmee
                             pbcopy
                             eproject
