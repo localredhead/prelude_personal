@@ -29,6 +29,14 @@
  '(ecb-options-version "2.40")
  '(ecb-source-path (quote (("/" "/"))))
  '(ecb-windows-width 0.25)
+ '(emacs-lisp-mode-hook
+   (quote
+    (ert--activate-font-lock-keywords elisp-slime-nav-mode
+                                      #[nil "\300\301!\207"
+                                            [run-hooks prelude-emacs-lisp-mode-hook]
+                                            2]
+                                      highlight-indentation-mode)))
+ '(explicit-shell-file-name "/bin/bash")
  '(fci-rule-color "#383838")
  '(flycheck-rubocop-lint-only t)
  '(foreground-color "#626262")
@@ -41,15 +49,27 @@
  '(helm-ag-insert-at-point (quote symbol))
  '(helm-ag-use-grep-ignore-list t)
  '(helm-buffer-max-length 60)
+ '(helm-candidate-number-limit 500)
  '(helm-do-grep-preselect-candidate t)
+ '(helm-ff-candidate-number-limit 500)
  '(helm-grep-ignored-files
    (quote
     (".#*" "*.o" "*~" "*.bin" "*.lbin" "*.so" "*.a" "*.ln" "*.blg" "*.bbl" "*.elc" "*.lof" "*.glo" "*.idx" "*.lot" "*.fmt" "*.tfm" "*.class" "*.fas" "*.lib" "*.mem" "*.x86f" "*.sparcf" "*.dfsl" "*.pfsl" "*.d64fsl" "*.p64fsl" "*.lx64fsl" "*.lx32fsl" "*.dx64fsl" "*.dx32fsl" "*.fx64fsl" "*.fx32fsl" "*.sx64fsl" "*.sx32fsl" "*.wx64fsl" "*.wx32fsl" "*.fasl" "*.ufsl" "*.fsl" "*.dxl" "*.lo" "*.la" "*.gmo" "*.mo" "*.toc" "*.aux" "*.cp" "*.fn" "*.ky" "*.pg" "*.tp" "*.vr" "*.cps" "*.fns" "*.kys" "*.pgs" "*.tps" "*.vrs" "*.pyc" "*.pyo")))
  '(highlight-indentation-offset 2)
+ '(ido-default-file-method (quote selected-window))
+ '(indent-guide-char ":")
+ '(indent-guide-global-mode nil)
+ '(indent-guide-recursive nil)
  '(indent-tabs-mode nil)
  '(javascript-indent-level 2)
  '(js-indent-level 2)
  '(line-number-mode 1)
+ '(lisp-mode-hook
+   (quote
+    (#[nil "\300\301!\207"
+           [run-hooks prelude-lisp-coding-hook]
+           2]
+     slime-lisp-mode-hook highlight-indentation-mode)))
  '(locale-coding-system (quote utf-8) t)
  '(menu-bar-mode nil)
  '(mode-line-default-help-echo nil)
@@ -65,26 +85,27 @@
  '(nxml-child-indent 2)
  '(package-selected-packages
    (quote
-    (auctex avy bundler helm-cmd-t js2-refactor neotree perspective projectile-rails restclient robe slime smart-mode-line tern twittering-mode sass-mode markdown-mode haml-mode flymake-php php+-mode php-mode yaml-mode web-mode scss-mode geiser yari inf-ruby ruby-tools json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters coffee-mode key-chord company helm-ag helm-descbinds helm-projectile helm smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char zenburn-theme volatile-highlights undo-tree smartrep smartparens operate-on-number move-text magit projectile ov guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash browse-kill-ring anzu ace-window)))
+    (corral hl-indent indent-guide async back-button dash-functional gh git-commit helm-core ido-completing-read+ json-reformat magit-popup rake rich-minority s ucs-utils with-editor yasnippet rspec-mode elixir-mode csv-mode auctex avy bundler helm-cmd-t js2-refactor neotree perspective projectile-rails restclient robe slime smart-mode-line tern twittering-mode sass-mode markdown-mode haml-mode flymake-php php+-mode php-mode yaml-mode web-mode scss-mode geiser yari inf-ruby ruby-tools json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters coffee-mode key-chord company helm-ag helm-descbinds helm-projectile helm smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char zenburn-theme volatile-highlights undo-tree smartrep smartparens operate-on-number move-text magit projectile ov guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash browse-kill-ring anzu ace-window)))
  '(prefer-coding-system (quote utf-8))
  '(projectile-global-mode t)
  '(projectile-switch-project-action (quote projectile-dired))
  '(rbenv-show-active-ruby-in-modeline t)
  '(redisplay-dont-pause t t)
  '(ring-bell-function (quote ignore))
- '(rspec-use-bundler-when-possible nil t)
- '(rspec-use-zeus-when-possible nil t)
+ '(rspec-use-bundler-when-possible nil)
+ '(rspec-use-zeus-when-possible nil)
  '(ruby-insert-encoding-magic-comment nil)
  '(scroll-conservatively 10000)
  '(scroll-margin 1)
  '(scroll-preserve-screen-position 1)
  '(scroll-step 1)
  '(semantic-mode 1)
+ '(semantic-stickyfunc-indent-string " ")
  '(set-default-coding-systems (quote utf-8))
  '(set-language-environment (quote utf-8))
  '(set-selection-coding-system (quote utf-8))
  '(set-terminal-coding-system (quote utf-8))
- '(setq-default truncate-lines t)
+ '(setq-default t t)
  '(show-paren-delay 0.05)
  '(show-paren-mode t)
  '(show-paren-style (quote parenthesis))
@@ -97,11 +118,20 @@
  '(sp-autoskip-closing-pair (quote always))
  '(sp-show-pair-delay 0.125)
  '(sp-show-pair-from-inside t)
+ '(standard-indent 2)
+ '(tab-always-indent (quote complete))
  '(tab-width 2)
  '(tabbar-background-color "#8FB28F")
  '(tabbar-mode t nil (tabbar))
  '(tabbar-separator (quote ("|")))
  '(tool-bar-mode nil)
+ '(tramp-default-host "Levis-MacBook-Pro-3.local")
+ '(tramp-default-method "ssh")
+ '(tramp-encoding-shell "bash")
+ '(tramp-remote-process-environment
+   (quote
+    ("TMOUT=0" "LC_CTYPE=''" "TERM=dumb" "INSIDE_EMACS='25.0.50.1,tramp:2.2.13-pre'" "CDPATH=" "HISTORY=" "MAIL=" "MAILCHECK=" "MAILPATH=" "PAGER=cat" "autocorrect=" "correct=" "RBENV_VERSION=2.1.6")))
+ '(tramp-terminal-type "vt100")
  '(url-proxy-services (quote (("https" . "127.0.0.1:8888"))))
  '(utf-translate-cjk-mode nil)
  '(vc-annotate-background "#2B2B2B")
@@ -129,12 +159,18 @@
  '(web-mode-attr-indent-offset 2)
  '(web-mode-code-indent-offset 2)
  '(web-mode-css-indent-offset 2)
- '(web-mode-enable-auto-indentation nil)
+ '(web-mode-enable-auto-indentation t)
+ '(web-mode-enable-auto-pairing t)
  '(web-mode-enable-current-column-highlight nil)
  '(web-mode-enable-current-element-highlight nil)
+ '(web-mode-enable-element-content-fontification nil)
+ '(web-mode-enable-element-tag-fontification nil)
  '(web-mode-enable-engine-detection t)
+ '(web-mode-enable-heredoc-fontification nil)
+ '(web-mode-enable-html-entities-fontification nil)
  '(web-mode-enable-inlays t)
  '(web-mode-enable-part-face nil)
+ '(web-mode-enable-sql-detection t)
  '(web-mode-enable-whitespace-fontification nil)
  '(web-mode-indent-style 2)
  '(web-mode-markup-indent-offset 2)
@@ -145,11 +181,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#3F3F3F" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "nil" :family "Input Mono"))))
+ '(default ((t (:inherit nil :stipple nil :background "#3F3F3F" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "nil" :family "iosevka"))))
  '(flycheck-error-list-highlight ((t (:inherit default))))
  '(highlight-indentation-current-column-face ((t (:background "disabledControlTextColor"))))
  '(highlight-indentation-face ((t (:background "disabledControlTextColor"))))
  '(hl-line ((t (:stipple nil :background "#383838"))))
+ '(indent-guide-face ((t (:foreground "disabledControlTextColor"))))
  '(linum ((t (:background "black" :foreground "cyan"))))
  '(linum-highlight-face ((t (:background "cyan" :foreground "black"))))
  '(magit-section-title ((t (:background "brightblack" :foreground "#F0DFAF" :weight bold))))
