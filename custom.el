@@ -17,15 +17,15 @@
  '(auto-save-timeout 1)
  '(background-color "#ffffd7")
  '(background-mode light)
- '(blink-cursor-mode t)
  '(c-basic-indent 2)
- '(column-number-mode 1)
+ '(column-number-mode t)
  '(cursor-color "#626262")
  '(custom-safe-themes
    (quote
     ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "282606e51ef2811142af5068bd6694b7cf643b27d63666868bc97d04422318c1" "90edd91338ebfdfcd52ecd4025f1c7f731aced4c9c49ed28cfbebb3a3654840b" "f0b0710b7e1260ead8f7808b3ee13c3bb38d45564e369cbe15fc6d312f0cd7a0" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" default)))
  '(diff-hl-margin-mode t)
  '(diff-hl-side (quote right))
+ '(expand-region-preferred-python-mode (quote fgallina-python))
  '(fci-rule-color "#383838")
  '(flycheck-rubocop-lint-only t)
  '(foreground-color "#626262")
@@ -34,6 +34,7 @@
  '(global-font-lock-mode 1)
  '(global-hl-line-mode t)
  '(global-linum-mode nil)
+ '(global-semantic-idle-local-symbol-highlight-mode t nil (semantic/idle))
  '(gnus-treat-from-gravatar (quote head))
  '(gnus-treat-mail-gravatar (quote head))
  '(grep-find-ignored-directories
@@ -50,15 +51,18 @@
  '(helm-grep-ignored-files
    (quote
     (".#*" "*.o" "*~" "*.bin" "*.lbin" "*.so" "*.a" "*.ln" "*.blg" "*.bbl" "*.elc" "*.lof" "*.glo" "*.idx" "*.lot" "*.fmt" "*.tfm" "*.class" "*.fas" "*.lib" "*.mem" "*.x86f" "*.sparcf" "*.dfsl" "*.pfsl" "*.d64fsl" "*.p64fsl" "*.lx64fsl" "*.lx32fsl" "*.dx64fsl" "*.dx32fsl" "*.fx64fsl" "*.fx32fsl" "*.sx64fsl" "*.sx32fsl" "*.wx64fsl" "*.wx32fsl" "*.fasl" "*.ufsl" "*.fsl" "*.dxl" "*.lo" "*.la" "*.gmo" "*.mo" "*.toc" "*.aux" "*.cp" "*.fn" "*.ky" "*.pg" "*.tp" "*.vr" "*.cps" "*.fns" "*.kys" "*.pgs" "*.tps" "*.vrs" "*.pyc" "*.pyo")))
+ '(highlight-changes-face-list
+   (quote
+    (highlight-changes-1 highlight-changes-2 highlight-changes-3 highlight-changes-4 highlight-changes-5 highlight-changes-6 highlight-changes-7)))
  '(highlight-indentation-offset 2)
  '(ido-default-file-method (quote selected-window))
  '(indent-guide-char ":")
  '(indent-guide-global-mode nil)
  '(indent-guide-recursive nil)
  '(indent-tabs-mode nil)
+ '(ispell-highlight-face (quote flyspell-incorrect))
  '(javascript-indent-level 2)
  '(js-indent-level 2)
- '(line-number-mode 1)
  '(lisp-mode-hook
    (quote
     (#[nil "\300\301!\207"
@@ -67,7 +71,6 @@
      slime-lisp-mode-hook highlight-indentation-mode)))
  '(locale-coding-system (quote utf-8) t)
  '(mail-source-delete-incoming nil)
- '(menu-bar-mode nil)
  '(mode-line-default-help-echo nil)
  '(mode-line-format
    (quote
@@ -88,9 +91,9 @@
  '(projectile-switch-project-action (quote projectile-dired))
  '(rbenv-show-active-ruby-in-modeline t)
  '(redisplay-dont-pause t t)
- '(ring-bell-function (quote ignore))
- '(rspec-use-bundler-when-possible nil)
- '(rspec-use-zeus-when-possible nil)
+ '(ring-bell-function (quote ignore) t)
+ '(rspec-use-bundler-when-possible nil t)
+ '(rspec-use-zeus-when-possible nil t)
  '(ruby-insert-encoding-magic-comment nil)
  '(scroll-conservatively 10000)
  '(scroll-margin 1)
@@ -108,6 +111,7 @@
  '(show-paren-style (quote parenthesis))
  '(show-paren-when-point-in-periphery nil)
  '(show-paren-when-point-inside-paren t)
+ '(size-indication-mode t)
  '(sml/use-projectile-p (quote before-prefixes))
  '(sml/vc-mode-show-backend t)
  '(sp-autoescape-string-quote nil)
@@ -153,6 +157,7 @@
      (340 . "#94BFF3")
      (360 . "#DC8CC3"))))
  '(vc-annotate-very-old-color "#DC8CC3")
+ '(volatile-highlights-mode t)
  '(web-mode-attr-indent-offset 2)
  '(web-mode-code-indent-offset 2)
  '(web-mode-css-indent-offset 2)
@@ -178,11 +183,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#3F3F3F" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "nil" :family "Input Mono"))))
+ '(default ((t (:inherit nil :stipple nil :background "#3F3F3F" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 102 :width normal :foundry "unknown" :family "IosevkaCC"))))
  '(cursor ((t (:background "Magenta" :foreground "Blue"))))
  '(flycheck-error-list-highlight ((t (:inherit default))))
- '(highlight-indentation-current-column-face ((t (:background "disabledControlTextColor"))))
- '(highlight-indentation-face ((t (:background "disabledControlTextColor"))))
+ '(highlight-indentation-current-column-face ((t (:background "gray20"))))
+ '(highlight-indentation-face ((t (:background "gray20"))))
  '(hl-line ((t (:stipple nil :background "#383838"))))
  '(indent-guide-face ((t (:foreground "disabledControlTextColor"))))
  '(linum ((t (:background "black" :foreground "cyan"))))
@@ -191,7 +196,7 @@
  '(mode-line ((t (:background "#5F7F5F" :foreground "gray60" :inverse-video nil :box (:line-width -1 :style released-button)))))
  '(mode-line-highlight ((t (:box (:line-width 2 :color "#E0CF9F" :style released-button)))))
  '(mode-line-inactive ((t (:background "#4F4F4F" :foreground "#E0CF9F" :inverse-video nil :box (:line-width -1 :style released-button)))))
- '(region ((t (:background "disabledControlTextColor"))))
+ '(region ((t (:background "gray22"))))
  '(show-paren-match ((t (:background "#5F7F5F" :weight bold))))
  '(sp-show-pair-match-face ((t (:background "#5F7F5F" :weight bold))))
  '(tabbar-default ((t (:inherit variable-pitch :background "#DCDCCC" :foreground "#8FB28F" :height 0.8 :family "Courier Primal"))))
