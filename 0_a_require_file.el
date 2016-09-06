@@ -19,6 +19,8 @@
                             js2-refactor
                             tern
                             company-tern
+                            flymake-solidity
+                            solidity-mode
                             twittering-mode
                             tabbar
                             fixmee

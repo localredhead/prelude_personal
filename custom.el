@@ -17,6 +17,7 @@
  '(auto-save-timeout 1)
  '(background-color "#ffffd7")
  '(background-mode light)
+ '(blink-cursor-mode nil)
  '(c-basic-indent 2)
  '(column-number-mode t)
  '(cursor-color "#626262")
@@ -28,6 +29,7 @@
  '(expand-region-preferred-python-mode (quote fgallina-python))
  '(fci-rule-color "#383838")
  '(flycheck-rubocop-lint-only t)
+ '(font-use-system-font t)
  '(foreground-color "#626262")
  '(fringe-mode -1 nil (fringe))
  '(global-ede-mode t)
@@ -183,7 +185,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#3F3F3F" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 102 :width normal :foundry "unknown" :family "IosevkaCC"))))
+ '(default ((t (:inherit nil :stipple nil :background "#3F3F3F" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "unknown" :family "Ubuntu Mono"))))
  '(cursor ((t (:background "Magenta" :foreground "Blue"))))
  '(flycheck-error-list-highlight ((t (:inherit default))))
  '(highlight-indentation-current-column-face ((t (:background "gray20"))))
@@ -196,7 +198,7 @@
  '(mode-line ((t (:background "#5F7F5F" :foreground "gray60" :inverse-video nil :box (:line-width -1 :style released-button)))))
  '(mode-line-highlight ((t (:box (:line-width 2 :color "#E0CF9F" :style released-button)))))
  '(mode-line-inactive ((t (:background "#4F4F4F" :foreground "#E0CF9F" :inverse-video nil :box (:line-width -1 :style released-button)))))
- '(region ((t (:background "gray22"))))
+ '(region ((t (:background "dark slate gray"))))
  '(show-paren-match ((t (:background "#5F7F5F" :weight bold))))
  '(sp-show-pair-match-face ((t (:background "#5F7F5F" :weight bold))))
  '(tabbar-default ((t (:inherit variable-pitch :background "#DCDCCC" :foreground "#8FB28F" :height 0.8 :family "Courier Primal"))))
