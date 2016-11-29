@@ -3,9 +3,9 @@
 ;(global-fixmee-mode 1)
 ;;higlight current linenumber
 (hlinum-activate)
-(setq sml/no-confirm-load-theme t)
-(setq sml/theme 'dark)
-(sml/setup)  ;; this causes issues.  execute by hand and restart for random load issues
+;; (setq sml/no-confirm-load-theme t)
+;; (setq sml/theme 'dark)
+;; (sml/setup)  ;; this causes issues.  execute by hand and restart for random load issues
 ;(smart-mode-line-enable)
 
 ;; Access OSX clipboard

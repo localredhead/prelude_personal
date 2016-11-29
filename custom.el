@@ -95,6 +95,9 @@
  '(op/site-main-title "Levi Strope")
  '(op/site-sub-title "org-life")
  '(op/theme (quote mdo))
+ '(org-agenda-files
+   (quote
+    ("~/Projects/localredhead.github.io/moleskin/ledger.org.gpg" "~/Projects/localredhead.github.io/moleskin/work.org.gpg")))
  '(org-capture-templates
    (quote
     (("" "" entry
