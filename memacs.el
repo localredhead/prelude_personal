@@ -1,3 +1,6 @@
+(setq user-full-name "Levi Strope")
+(setq user-mail-address "levi.strope@gmail.com")
+
 (require 'server)
 (unless (server-running-p)
   (server-start))

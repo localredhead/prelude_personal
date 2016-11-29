@@ -18,6 +18,7 @@
  '(background-color "#ffffd7")
  '(background-mode light)
  '(blink-cursor-mode nil)
+ '(browse-url-browser-display nil)
  '(c-basic-indent 2)
  '(column-number-mode t)
  '(cursor-color "#626262")
@@ -48,6 +49,7 @@
  '(helm-ag-use-grep-ignore-list t)
  '(helm-buffer-max-length 60)
  '(helm-candidate-number-limit 500)
+ '(helm-default-external-file-browser "thunar")
  '(helm-do-grep-preselect-candidate t)
  '(helm-ff-candidate-number-limit 500)
  '(helm-grep-ignored-files
@@ -85,6 +87,23 @@
  '(ns-pop-up-frames nil)
  '(nxml-attribute-indent 2)
  '(nxml-child-indent 2)
+ '(op/personal-avatar
+   "https://media.licdn.com/mpr/mpr/shrinknp_500_500/p/6/005/095/364/3fd9ba3.jpg")
+ '(op/personal-github-link "https://github.com/localredhead/")
+ '(op/repository-directory "/home/localredhead/Projects/localredhead.github.io")
+ '(op/site-domain "https://www.levistrope.com")
+ '(op/site-main-title "Levi Strope")
+ '(op/site-sub-title "org-life")
+ '(op/theme (quote mdo))
+ '(org-capture-templates
+   (quote
+    (("" "" entry
+      (file+datetree "")
+      "" :jump-to-captured t))))
+ '(org-from-is-user-regexp "\\<localredhead\\>")
+ '(org-hide-emphasis-markers t)
+ '(org-hide-leading-stars t)
+ '(org-log-done (quote time))
  '(package-selected-packages
    (quote
     (slime cider zop-to-char zenburn-theme yari yaml-mode web-mode volatile-highlights vkill vagrant-tramp vagrant undo-tree twittering-mode tabbar spinner smex smartparens smart-mode-line scss-mode ruby-tools rubocop rspec-mode rsense robe restclient rbenv rainbow-mode rainbow-delimiters queue projectile-rails php-mode perspective pbcopy ov operate-on-number neotree multi-term move-text magit key-chord json-mode js2-refactor ido-ubiquitous hlinum highlight-indentation helm-projectile helm-descbinds helm-cmd-t helm-ag handlebars-mode haml-mode guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine git-rebase-mode git-commit-mode gist geiser flycheck flx-ido fixmee expand-region exec-path-from-shell eproject elisp-slime-nav easy-kill discover-my-major diminish diff-hl company-tern color-theme-sanityinc-solarized coffee-mode clojure-mode bundler browse-kill-ring anzu ace-window)))
@@ -135,7 +154,6 @@
    (quote
     ("TMOUT=0" "LC_CTYPE=''" "TERM=dumb" "INSIDE_EMACS='25.0.50.1,tramp:2.2.13-pre'" "CDPATH=" "HISTORY=" "MAIL=" "MAILCHECK=" "MAILPATH=" "PAGER=cat" "autocorrect=" "correct=" "RBENV_VERSION=2.1.6")))
  '(tramp-terminal-type "vt100")
- '(url-proxy-services (quote (("https" . "127.0.0.1:8888"))))
  '(utf-translate-cjk-mode nil)
  '(vc-annotate-background "#2B2B2B")
  '(vc-annotate-color-map
@@ -185,7 +203,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#3F3F3F" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "unknown" :family "Noto Mono"))))
+ '(default ((t (:inherit nil :stipple nil :background "#3F3F3F" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 122 :width normal :foundry "PfEd" :family "DejaVu Sans Mono"))))
  '(cursor ((t (:background "Magenta" :foreground "Blue"))))
  '(flycheck-error-list-highlight ((t (:inherit default))))
  '(highlight-indentation-current-column-face ((t (:background "gray20"))))

@@ -28,8 +28,10 @@
                             eproject
                             perspective
                             vagrant
-                            vagrant-tramp))
-
+                            vagrant-tramp
+                            htmlize
+                            git
+                            ego))
 
 
 ;; (prelude-require-package 'multi-term)
