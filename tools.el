@@ -48,8 +48,10 @@
 ;;      export PATH="/usr/local/bin:$PATH"  (after brew install ctags-excuberant)
 ;; generate tags for ruby gems using bundler(this is the holy grail of ctags generation)
 ;;    bundle show --paths | xargs  ctags-exuberant -a -e -f TAGS --tag-relative -R app lib spec config bin vendor
-;; (you may need to delete osx ctags installation)
-;; *for brew install (Try just ctags on osx.)
+;;
+;; (you may need to delete osx ctags installation unless you use brew link --overwrite ctags)
+;;
+;; *for brew install: (export CFLAGS=-O0 && brew install ctags && brew link --overwrite ctags)
 (defun build-ruby-ctags ()
   (interactive)
   (message "building project tags")

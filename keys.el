@@ -6,6 +6,7 @@
 ;;install from melpa
 (require 'helm-cmd-t)
 (global-set-key (kbd "M-t") 'helm-projectile)
+;(global-set-key (kbd "M-b") 'helm-mini)
 ;; (global-set-key (kbd "M-z") ')
 ;(global-s<et-key (kbd "M-t") 'helm-for-files)
 ;(global-set-key [remap find-tag] 'helm-etags-select)
@@ -13,7 +14,10 @@
 (defalias 'list-buffers 'ibuffer) ;use ibuffer instead of list-buffer
 
 ;;access neotree quickly
+
+(setq neo-smart-open t)
 (key-chord-define-global "nj" 'neotree-toggle)
+(key-chord-define-global "nr" 'neotree-refresh)
 (key-chord-define-global "kk" 'kill-whole-line)
 
 ;;get a term buffer quickly
