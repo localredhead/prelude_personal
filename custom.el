@@ -34,7 +34,7 @@
  '(foreground-color "#626262")
  '(fringe-mode -1 nil (fringe))
  '(global-ede-mode t)
- '(global-font-lock-mode 1)
+ '(global-font-lock-mode t)
  '(global-hl-line-mode t)
  '(global-linum-mode nil)
  '(global-semantic-idle-local-symbol-highlight-mode t nil (semantic/idle))
@@ -123,7 +123,7 @@
  '(scroll-margin 1)
  '(scroll-preserve-screen-position 1)
  '(scroll-step 1)
- '(semantic-mode 1)
+ '(semantic-mode t)
  '(semantic-stickyfunc-indent-string " ")
  '(set-default-coding-systems (quote utf-8))
  '(set-language-environment (quote utf-8))
@@ -206,7 +206,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#3F3F3F" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 122 :width normal :foundry "PfEd" :family "DejaVu Sans Mono"))))
+ '(default ((t (:inherit nil :stipple nil :background "#3F3F3F" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :family "Noto Mono"))))
  '(cursor ((t (:background "Magenta" :foreground "Blue"))))
  '(flycheck-error-list-highlight ((t (:inherit default))))
  '(highlight-indentation-current-column-face ((t (:background "gray20"))))
