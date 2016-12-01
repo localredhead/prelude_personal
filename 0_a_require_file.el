@@ -31,7 +31,10 @@
                             vagrant-tramp
                             htmlize
                             git
-                            ego))
+                            ego
+                            elfeed
+                            elfeed-org
+                            elfeed-goodies))
 
 
 ;; (prelude-require-package 'multi-term)
