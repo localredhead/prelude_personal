@@ -34,9 +34,13 @@
                             ego
                             elfeed
                             elfeed-org
-                            elfeed-goodies))
+                            elfeed-goodies
+                            plantuml-mode
+                            ox-jira
+                            yafolding
+                            bm))
 
-
+(setq bm-marker 'bm-marker-right)
 ;; (prelude-require-package 'multi-term)
 ;; (prelude-require-packages '(nav god-mode))
 ;; (prelude-require-package 'helm-cmd-t)

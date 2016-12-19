@@ -18,6 +18,7 @@
  '(background-color "#ffffd7")
  '(background-mode light)
  '(blink-cursor-mode nil)
+ '(bmkp-last-as-first-bookmark-file "/Users/levstr/.emacs.d/savefile/bookmarks")
  '(browse-url-browser-display nil)
  '(c-basic-indent 2)
  '(column-number-mode t)
@@ -97,27 +98,32 @@
  '(op/theme (quote mdo))
  '(org-agenda-files
    (quote
-    ("~/Projects/localredhead.github.io/moleskin/ledger.org.gpg" "~/Projects/localredhead.github.io/moleskin/work.org.gpg")))
+    ("~/Projects/localredhead.github.io/moleskin/refile.org.gpg" "~/Projects/localredhead.github.io/moleskin/ledger.org.gpg" "~/Projects/localredhead.github.io/moleskin/work.org.gpg")))
  '(org-capture-templates
    (quote
     (("" "" entry
       (file+datetree "")
-      "" :jump-to-captured t))))
+      "" :jump-to-captured t))) t)
+ '(org-export-backends
+   (quote
+    (ascii html icalendar latex md org texinfo confluence freemind)))
  '(org-from-is-user-regexp "\\<localredhead\\>")
  '(org-hide-emphasis-markers t)
  '(org-hide-leading-stars t)
  '(org-log-done (quote time))
+ '(org-plantuml-jar-path "/usr/local/Cellar/plantuml/8048/libexec/plantuml.jar")
  '(package-selected-packages
    (quote
     (slime cider zop-to-char zenburn-theme yari yaml-mode web-mode volatile-highlights vkill vagrant-tramp vagrant undo-tree twittering-mode tabbar spinner smex smartparens smart-mode-line scss-mode ruby-tools rubocop rspec-mode rsense robe restclient rbenv rainbow-mode rainbow-delimiters queue projectile-rails php-mode perspective pbcopy ov operate-on-number neotree multi-term move-text magit key-chord json-mode js2-refactor ido-ubiquitous hlinum highlight-indentation helm-projectile helm-descbinds helm-cmd-t helm-ag handlebars-mode haml-mode guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine git-rebase-mode git-commit-mode gist geiser flycheck flx-ido fixmee expand-region exec-path-from-shell eproject elisp-slime-nav easy-kill discover-my-major diminish diff-hl company-tern color-theme-sanityinc-solarized coffee-mode clojure-mode bundler browse-kill-ring anzu ace-window)))
+ '(plantuml-jar-path "/usr/local/Cellar/plantuml/8048/libexec/plantuml.jar")
  '(prefer-coding-system (quote utf-8))
  '(projectile-global-mode t)
  '(projectile-switch-project-action (quote projectile-dired))
  '(rbenv-show-active-ruby-in-modeline t)
  '(redisplay-dont-pause t t)
  '(ring-bell-function (quote ignore) t)
- '(rspec-use-bundler-when-possible nil t)
- '(rspec-use-zeus-when-possible nil t)
+ '(rspec-use-bundler-when-possible nil)
+ '(rspec-use-zeus-when-possible nil)
  '(ruby-insert-encoding-magic-comment nil)
  '(scroll-conservatively 10000)
  '(scroll-margin 1)
@@ -206,7 +212,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#3F3F3F" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :family "Noto Mono"))))
+ '(default ((t (:inherit nil :stipple nil :background "#3F3F3F" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "nil" :family "Hack"))))
  '(cursor ((t (:background "Magenta" :foreground "Blue"))))
  '(flycheck-error-list-highlight ((t (:inherit default))))
  '(highlight-indentation-current-column-face ((t (:background "gray20"))))
