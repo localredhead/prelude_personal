@@ -1,17 +1,7 @@
-;(disable-theme 'zenburn)
+(disable-theme 'zenburn)
 ;(setq prelude-whitespace nil)
 (setq prelude-guru nil)
-;(load-theme 'solarized-dark t)
-;(load-theme 'cyberpunk t)
-
-;; Solarized settings
-;(setq solarized-broken-srgb t)
-
-;;color themes to try
-;https://github.com/bruce/emacs-spacegray-theme
-;https://github.com/osener/emacs-afternoon-theme/
-;https://github.com/ChrisKempson/Tomorrow-Theme
-;https://github.com/chriskempson/base16
+(load-theme 'dracula t)
 ;(setq flx-ido-threshhold 1000)
 ;;(flx-ido-mode -1)         ;;turn threshold off if this is enabled
 (setq company-begin-commands '(self-insert-command))

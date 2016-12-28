@@ -6,7 +6,7 @@
 (setq rbenv-executable "/usr/local/bin/rbenv")
 (setq rbenv-show-active-ruby-in-modeline nil)
 (global-rbenv-mode)
-(rbenv-use-global)
+(rbenv-use-corresponding)
 
 ;;rspec
 (setq rspec-use-opts-file-when-available nil)

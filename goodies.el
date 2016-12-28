@@ -1,6 +1,5 @@
 (setq multi-term-program "/bin/bash")
 (setq twittering-use-master-password t)
-;(global-fixmee-mode 1)
 ;;higlight current linenumber
 (hlinum-activate)
 ;; (setq sml/no-confirm-load-theme t)
