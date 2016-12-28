@@ -4,10 +4,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(TeX-auto-save t)
- '(ansi-color-faces-vector
-   [default default default italic underline success warning error])
- ;; '(ansi-color-names-vector
- ;;   ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
  '(auto-save-default nil)
  '(auto-save-file-name-transforms
    (quote
@@ -29,13 +25,14 @@
  '(diff-hl-margin-mode t)
  '(diff-hl-side (quote right))
  '(expand-region-preferred-python-mode (quote fgallina-python))
+ '(fci-rule-color "#383838")
  '(flycheck-rubocop-lint-only t)
  '(font-use-system-font t)
- '(fringe-mode -1 nil (fringe))
+ '(fringe-mode nil nil (fringe))
  '(global-ede-mode t)
  '(global-font-lock-mode t)
  '(global-hl-line-mode t)
- '(global-linum-mode nil)
+ '(global-linum-mode t)
  '(global-semantic-idle-local-symbol-highlight-mode t nil (semantic/idle))
  '(gnus-treat-from-gravatar (quote head))
  '(gnus-treat-mail-gravatar (quote head))
@@ -63,6 +60,7 @@
  '(indent-guide-global-mode nil)
  '(indent-guide-recursive nil)
  '(indent-tabs-mode nil)
+ '(indicate-buffer-boundaries nil)
  '(ispell-highlight-face (quote flyspell-incorrect))
  '(javascript-indent-level 2)
  '(js-indent-level 2)
@@ -83,6 +81,9 @@
  '(mode-line-in-non-selected-windows t)
  '(nav-width 30)
  '(nnimap-request-articles-find-limit 100)
+ '(nrepl-message-colors
+   (quote
+    ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(ns-pop-up-frames nil)
  '(nxml-attribute-indent 2)
  '(nxml-child-indent 2)
@@ -101,7 +102,7 @@
    (quote
     (("" "" entry
       (file+datetree "")
-      "" :jump-to-captured t))))
+      "" :jump-to-captured t))) t)
  '(org-export-backends
    (quote
     (ascii html icalendar latex md org texinfo confluence freemind)))
@@ -113,6 +114,7 @@
  '(package-selected-packages
    (quote
     (dracula-theme org-plus-contrib annotate org-bookmark-heading ztree slime cider zop-to-char zenburn-theme yari yaml-mode web-mode volatile-highlights vkill vagrant-tramp vagrant undo-tree twittering-mode tabbar spinner smex smartparens smart-mode-line scss-mode ruby-tools rubocop rspec-mode rsense robe restclient rbenv rainbow-mode rainbow-delimiters queue projectile-rails php-mode perspective pbcopy ov operate-on-number neotree multi-term move-text magit key-chord json-mode js2-refactor ido-ubiquitous hlinum highlight-indentation helm-projectile helm-descbinds helm-cmd-t helm-ag handlebars-mode haml-mode guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine git-rebase-mode git-commit-mode gist geiser flycheck flx-ido fixmee expand-region exec-path-from-shell eproject elisp-slime-nav easy-kill discover-my-major diminish diff-hl company-tern color-theme-sanityinc-solarized coffee-mode clojure-mode bundler browse-kill-ring anzu ace-window)))
+ '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(plantuml-jar-path "/usr/local/Cellar/plantuml/8048/libexec/plantuml.jar")
  '(prefer-coding-system (quote utf-8))
  '(projectile-global-mode t)
@@ -120,8 +122,8 @@
  '(rbenv-show-active-ruby-in-modeline t)
  '(redisplay-dont-pause t t)
  '(ring-bell-function (quote ignore))
- '(rspec-use-bundler-when-possible nil)
- '(rspec-use-zeus-when-possible nil)
+ '(rspec-use-bundler-when-possible nil t)
+ '(rspec-use-zeus-when-possible nil t)
  '(ruby-insert-encoding-magic-comment nil)
  '(scroll-conservatively 10000)
  '(scroll-margin 1)
@@ -150,7 +152,7 @@
  '(standard-indent 2)
  '(tab-always-indent (quote complete))
  '(tab-width 2)
- '(tabbar-mode t nil (tabbar))
+ '(tabbar-mode nil nil (tabbar))
  '(tabbar-separator (quote ("|")))
  '(tool-bar-mode nil)
  '(tramp-default-host "Levis-MacBook-Pro-3.local" nil (tramp))
@@ -161,28 +163,7 @@
     ("TMOUT=0" "LC_CTYPE=''" "TERM=dumb" "INSIDE_EMACS='25.0.50.1,tramp:2.2.13-pre'" "CDPATH=" "HISTORY=" "MAIL=" "MAILCHECK=" "MAILPATH=" "PAGER=cat" "autocorrect=" "correct=" "RBENV_VERSION=2.1.6")) nil (tramp))
  '(tramp-terminal-type "vt100" nil (tramp))
  '(utf-translate-cjk-mode nil)
- '(vc-annotate-background "#2B2B2B")
- '(vc-annotate-color-map
-   (quote
-    ((20 . "#BC8383")
-     (40 . "#CC9393")
-     (60 . "#DFAF8F")
-     (80 . "#D0BF8F")
-     (100 . "#E0CF9F")
-     (120 . "#F0DFAF")
-     (140 . "#5F7F5F")
-     (160 . "#7F9F7F")
-     (180 . "#8FB28F")
-     (200 . "#9FC59F")
-     (220 . "#AFD8AF")
-     (240 . "#BFEBBF")
-     (260 . "#93E0E3")
-     (280 . "#6CA0A3")
-     (300 . "#7CB8BB")
-     (320 . "#8CD0D3")
-     (340 . "#94BFF3")
-     (360 . "#DC8CC3"))))
- '(vc-annotate-very-old-color "#DC8CC3")
+ '(vc-annotate-background nil)
  '(volatile-highlights-mode t)
  '(web-mode-attr-indent-offset 2)
  '(web-mode-code-indent-offset 2)
@@ -205,4 +186,8 @@
  '(web-mode-script-padding 0)
  '(yas-global-mode t nil (yasnippet)))
 (custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  )

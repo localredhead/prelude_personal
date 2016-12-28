@@ -11,4 +11,4 @@
 (turn-on-pbcopy)
 
 ;;Perspective
-(persp-mode)
+;; (persp-mode)

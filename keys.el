@@ -35,6 +35,6 @@
 ;; (global-set-key (kbd "M-<right>") 'windmove-right)
 ;; (global-set-key (kbd "M-<left>") 'windmove-left)
 
-(require 'tabbar)
-(global-set-key [M-left] 'tabbar-backward-tab)
-(global-set-key [M-right] 'tabbar-forward-tab)
+;; (require 'tabbar)
+;; (global-set-key [M-left] 'tabbar-backward-tab)
+;; (global-set-key [M-right] 'tabbar-forward-tab)

@@ -5,12 +5,6 @@
 (add-to-list 'semantic-default-submodes 'global-semantic-idle-scheduler-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-idle-completions-mode)
 
-;;GUI mode only
-(if (display-graphic-p)
-    (progn (scroll-bar-mode -1)
-           (highlight-changes-mode t)
-           (toggle-frame-maximized)))
-
 ;; (should probably use iTerm2 unless you want to install MouseTerm for Terminal.app)
 ;; Enable mouse support
 (unless window-system
@@ -52,20 +46,20 @@
 ;; (you may need to delete osx ctags installation unless you use brew link --overwrite ctags)
 ;;
 ;; *for brew install: (export CFLAGS=-O0 && brew install ctags && brew link --overwrite ctags)
-(defun build-ruby-ctags ()
-  (interactive)
-  (message "building project tags")
-  (let ((root (eproject-root)))
-    (shell-command (concat "bundle show --paths | xargs  ctags -a -e -f TAGS --tag-relative -R app lib spec config bin")))
-  (visit-project-tags)
-  (message "tags built successfully"))
-(setq tags-case-fold-search t)
-(setq tags-revert-without-query 1) ;to avoid being asked to load the file.
-(defun visit-project-tags ()
-  (interactive)
-  (let ((tags-file (concat (eproject-root) "TAGS")))
-    (visit-tags-table tags-file)
-    (message (concat "Loaded " tags-file))))
+;; (defun build-ruby-ctags ()
+;;   (interactive)
+;;   (message "building project tags")
+;;   (let ((root (eproject-root)))
+;;     (shell-command (concat "bundle show --paths | xargs  ctags -a -e -f TAGS --tag-relative -R app lib spec config bin")))
+;;   (visit-project-tags)
+;;   (message "tags built successfully"))
+;; (setq tags-case-fold-search t)
+;; (setq tags-revert-without-query 1) ;to avoid being asked to load the file.
+;; (defun visit-project-tags ()
+;;   (interactive)
+;;   (let ((tags-file (concat (eproject-root) "TAGS")))
+;;     (visit-tags-table tags-file)
+;;     (message (concat "Loaded " tags-file))))
 
 ;; Turn off truncate line mode for inf-ruby processes, SQL buffers, except for when highlight-indentation is in scope
 ;; There is a problem with C-e inside inf-ruby processes and it crashes the emacs process.  To avoid it, let the lines wrap.
