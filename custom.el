@@ -4,6 +4,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(TeX-auto-save t)
+ '(ansi-color-names-vector
+   ["#3F3F3F" "#CC9393" "#7F9F7F" "#F0DFAF" "#8CD0D3" "#DC8CC3" "#93E0E3" "#DCDCCC"])
  '(auto-save-default nil)
  '(auto-save-file-name-transforms
    (quote
@@ -26,10 +28,11 @@
  '(diff-hl-side (quote right))
  '(expand-region-preferred-python-mode (quote fgallina-python))
  '(fci-rule-color "#383838")
- '(flycheck-rubocop-lint-only t)
+ '(flycheck-rubocop-lint-only nil)
  '(font-use-system-font t)
  '(fringe-mode nil nil (fringe))
  '(global-ede-mode t)
+ '(global-flycheck-mode t)
  '(global-font-lock-mode t)
  '(global-hl-line-mode t)
  '(global-linum-mode t)
@@ -72,6 +75,7 @@
      slime-lisp-mode-hook highlight-indentation-mode)))
  '(locale-coding-system (quote utf-8) t)
  '(mail-source-delete-incoming nil)
+ '(menu-bar-mode nil)
  '(mode-line-default-help-echo nil)
  '(mode-line-format
    (quote
@@ -113,7 +117,7 @@
  '(org-plantuml-jar-path "/usr/local/Cellar/plantuml/8048/libexec/plantuml.jar")
  '(package-selected-packages
    (quote
-    (dracula-theme org-plus-contrib annotate org-bookmark-heading ztree slime cider zop-to-char zenburn-theme yari yaml-mode web-mode volatile-highlights vkill vagrant-tramp vagrant undo-tree twittering-mode tabbar spinner smex smartparens smart-mode-line scss-mode ruby-tools rubocop rspec-mode rsense robe restclient rbenv rainbow-mode rainbow-delimiters queue projectile-rails php-mode perspective pbcopy ov operate-on-number neotree multi-term move-text magit key-chord json-mode js2-refactor ido-ubiquitous hlinum highlight-indentation helm-projectile helm-descbinds helm-cmd-t helm-ag handlebars-mode haml-mode guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine git-rebase-mode git-commit-mode gist geiser flycheck flx-ido fixmee expand-region exec-path-from-shell eproject elisp-slime-nav easy-kill discover-my-major diminish diff-hl company-tern color-theme-sanityinc-solarized coffee-mode clojure-mode bundler browse-kill-ring anzu ace-window)))
+    (markdown-toc markdown-mode+ jira-markup-mode markdown-preview-mode markdown-preview-eww dracula-theme org-plus-contrib annotate org-bookmark-heading ztree slime cider zop-to-char zenburn-theme yari yaml-mode web-mode volatile-highlights vkill vagrant-tramp vagrant undo-tree twittering-mode tabbar spinner smex smartparens smart-mode-line scss-mode ruby-tools rubocop rspec-mode rsense robe restclient rbenv rainbow-mode rainbow-delimiters queue projectile-rails php-mode perspective pbcopy ov operate-on-number neotree multi-term move-text magit key-chord json-mode js2-refactor ido-ubiquitous hlinum highlight-indentation helm-projectile helm-descbinds helm-cmd-t helm-ag handlebars-mode haml-mode guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine git-rebase-mode git-commit-mode gist geiser flycheck flx-ido fixmee expand-region exec-path-from-shell eproject elisp-slime-nav easy-kill discover-my-major diminish diff-hl company-tern color-theme-sanityinc-solarized coffee-mode clojure-mode bundler browse-kill-ring anzu ace-window)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(plantuml-jar-path "/usr/local/Cellar/plantuml/8048/libexec/plantuml.jar")
  '(prefer-coding-system (quote utf-8))
@@ -122,8 +126,8 @@
  '(rbenv-show-active-ruby-in-modeline t)
  '(redisplay-dont-pause t t)
  '(ring-bell-function (quote ignore))
- '(rspec-use-bundler-when-possible nil t)
- '(rspec-use-zeus-when-possible nil t)
+ '(rspec-use-bundler-when-possible nil)
+ '(rspec-use-zeus-when-possible nil)
  '(ruby-insert-encoding-magic-comment nil)
  '(scroll-conservatively 10000)
  '(scroll-margin 1)
@@ -164,6 +168,27 @@
  '(tramp-terminal-type "vt100" nil (tramp))
  '(utf-translate-cjk-mode nil)
  '(vc-annotate-background nil)
+ '(vc-annotate-color-map
+   (quote
+    ((20 . "#BC8383")
+     (40 . "#CC9393")
+     (60 . "#DFAF8F")
+     (80 . "#D0BF8F")
+     (100 . "#E0CF9F")
+     (120 . "#F0DFAF")
+     (140 . "#5F7F5F")
+     (160 . "#7F9F7F")
+     (180 . "#8FB28F")
+     (200 . "#9FC59F")
+     (220 . "#AFD8AF")
+     (240 . "#BFEBBF")
+     (260 . "#93E0E3")
+     (280 . "#6CA0A3")
+     (300 . "#7CB8BB")
+     (320 . "#8CD0D3")
+     (340 . "#94BFF3")
+     (360 . "#DC8CC3"))))
+ '(vc-annotate-very-old-color "#DC8CC3")
  '(volatile-highlights-mode t)
  '(web-mode-attr-indent-offset 2)
  '(web-mode-code-indent-offset 2)
