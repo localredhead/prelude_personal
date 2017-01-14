@@ -23,9 +23,10 @@
  '(column-number-mode t)
  '(custom-safe-themes
    (quote
-    ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "282606e51ef2811142af5068bd6694b7cf643b27d63666868bc97d04422318c1" "90edd91338ebfdfcd52ecd4025f1c7f731aced4c9c49ed28cfbebb3a3654840b" "f0b0710b7e1260ead8f7808b3ee13c3bb38d45564e369cbe15fc6d312f0cd7a0" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" default)))
+    ("b85fc9f122202c71b9884c5aff428eb81b99d25d619ee6fde7f3016e08515f07" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "282606e51ef2811142af5068bd6694b7cf643b27d63666868bc97d04422318c1" "90edd91338ebfdfcd52ecd4025f1c7f731aced4c9c49ed28cfbebb3a3654840b" "f0b0710b7e1260ead8f7808b3ee13c3bb38d45564e369cbe15fc6d312f0cd7a0" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" default)))
  '(diff-hl-margin-mode t)
  '(diff-hl-side (quote right))
+ '(erc-track-position-in-mode-line t)
  '(expand-region-preferred-python-mode (quote fgallina-python))
  '(fci-rule-color "#383838")
  '(flycheck-rubocop-lint-only nil)
@@ -101,12 +102,13 @@
  '(op/theme (quote mdo))
  '(org-agenda-files
    (quote
-    ("~/Projects/localredhead.github.io/moleskin/refile.org.gpg" "~/Projects/localredhead.github.io/moleskin/ledger.org.gpg" "~/Projects/localredhead.github.io/moleskin/work.org.gpg")))
+    ("~/Projects/localredhead.github.io/moleskin/ledger.org.gpg" "~/Projects/localredhead.github.io/moleskin/work.org.gpg" "~/Projects/localredhead.github.io/moleskin/remember.org.gpg")))
  '(org-capture-templates
    (quote
     (("" "" entry
       (file+datetree "")
-      "" :jump-to-captured t))) t)
+      "" :jump-to-captured t))))
+ '(org-directory "~/Projects/localredhead.github.io/moleskin")
  '(org-export-backends
    (quote
     (ascii html icalendar latex md org texinfo confluence freemind)))
@@ -115,15 +117,16 @@
  '(org-hide-leading-stars t)
  '(org-log-done (quote time))
  '(org-plantuml-jar-path "/usr/local/Cellar/plantuml/8048/libexec/plantuml.jar")
+ '(org-todo-keywords (quote ((sequence "TODO" "STARTED" "DONE"))))
  '(package-selected-packages
    (quote
-    (markdown-toc markdown-mode+ jira-markup-mode markdown-preview-mode markdown-preview-eww dracula-theme org-plus-contrib annotate org-bookmark-heading ztree slime cider zop-to-char zenburn-theme yari yaml-mode web-mode volatile-highlights vkill vagrant-tramp vagrant undo-tree twittering-mode tabbar spinner smex smartparens smart-mode-line scss-mode ruby-tools rubocop rspec-mode rsense robe restclient rbenv rainbow-mode rainbow-delimiters queue projectile-rails php-mode perspective pbcopy ov operate-on-number neotree multi-term move-text magit key-chord json-mode js2-refactor ido-ubiquitous hlinum highlight-indentation helm-projectile helm-descbinds helm-cmd-t helm-ag handlebars-mode haml-mode guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine git-rebase-mode git-commit-mode gist geiser flycheck flx-ido fixmee expand-region exec-path-from-shell eproject elisp-slime-nav easy-kill discover-my-major diminish diff-hl company-tern color-theme-sanityinc-solarized coffee-mode clojure-mode bundler browse-kill-ring anzu ace-window)))
+    (subatomic256-theme markdown-toc markdown-mode+ jira-markup-mode markdown-preview-mode markdown-preview-eww dracula-theme org-plus-contrib annotate org-bookmark-heading ztree slime cider zop-to-char zenburn-theme yari yaml-mode web-mode volatile-highlights vkill vagrant-tramp vagrant undo-tree twittering-mode tabbar spinner smex smartparens smart-mode-line scss-mode ruby-tools rubocop rspec-mode rsense robe restclient rbenv rainbow-mode rainbow-delimiters queue projectile-rails php-mode perspective pbcopy ov operate-on-number neotree multi-term move-text magit key-chord json-mode js2-refactor ido-ubiquitous hlinum highlight-indentation helm-projectile helm-descbinds helm-cmd-t helm-ag handlebars-mode haml-mode guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine git-rebase-mode git-commit-mode gist geiser flycheck flx-ido fixmee expand-region exec-path-from-shell eproject elisp-slime-nav easy-kill discover-my-major diminish diff-hl company-tern color-theme-sanityinc-solarized coffee-mode clojure-mode bundler browse-kill-ring anzu ace-window)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(plantuml-jar-path "/usr/local/Cellar/plantuml/8048/libexec/plantuml.jar")
  '(prefer-coding-system (quote utf-8))
  '(projectile-global-mode t)
  '(projectile-switch-project-action (quote projectile-dired))
- '(rbenv-show-active-ruby-in-modeline t)
+ '(rbenv-show-active-ruby-in-modeline nil)
  '(redisplay-dont-pause t t)
  '(ring-bell-function (quote ignore))
  '(rspec-use-bundler-when-possible nil)
@@ -146,6 +149,7 @@
  '(show-paren-when-point-in-periphery nil)
  '(show-paren-when-point-inside-paren t)
  '(size-indication-mode t)
+ '(smartrep-mode-line-active-bg "#383838")
  '(sml/use-projectile-p (quote before-prefixes))
  '(sml/vc-mode-show-backend t)
  '(sp-autoescape-string-quote nil)
@@ -215,4 +219,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(mode-line-inactive ((t (:background "#373844" :foreground "#f8f8f2" :box (:line-width 1 :color "#282a36"))))))
