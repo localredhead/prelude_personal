@@ -13,31 +13,6 @@
 
 %i")
 
-(setq org-capture-templates
-      `(("n" "Quick note" item
-         (file+datetree org-default-notes-file)
-         "%? %U"
-         :prepend t)
-
-        ("t" "TODO" entry
-         (file+datetree org-default-notes-file)
-         ,log-todo-template
-         :prepend t
-         :emptylines 1
-         :immediate-finish t)
-
-        ("d" "Daily Task" checkitem
-         (file+datetree org-default-notes-file)
-         "%?"
-         :prepend t)
-
-        ("j" "Journal" entry
-         (file+datetree "ledger.org.gpg" "Journal")
-         "* %? %U"
-         :unnarrowed f)
-
-        ))
-
 (add-hook 'org-mode-hook
           (lambda ()
             (org-indent-mode)))
@@ -55,3 +30,26 @@
    (dot        . t)
    (css        . t)
    (plantuml   . t)))
+
+;; (setq org-capture-templates '(("n" "Quick note" entry
+;;                                (file+datetree org-default-notes-file)
+;;                                "%? %U"
+;;                                :prepend t)
+
+;;                               ("t" "TODO" entry
+;;                                (file+datetree org-default-notes-file)
+;;                                ,log-todo-template
+;;                                :prepend t
+;;                                :emptylines 1
+;;                                :immediate-finish t)
+
+;;                               ("d" "Daily Task" checkitem
+;;                                (file+datetree org-default-notes-file)
+;;                                "%?"
+;;                                :prepend t)
+
+;;                               ("j" "Journal" entry
+;;                                (file+datetree "ledger.org.gpg" "Journal")
+;;                                "* %? %U"
+;;                                :unnarrowed f)
+;;                               ))

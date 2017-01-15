@@ -7,8 +7,8 @@
                      :site-domain "https://localredhead.github.io"
                      :site-main-title "Levi Strope"
                      :site-sub-title "entropy in action"
-                     :theme (mashmellow)
-                     :summary (("years" :year :updates 10) ("tags" :tags))
+                     :theme (dracula)
+                     :summary (("year" :posts) ("tags" :tags))
                      :source-browse-url ("Github" "https://github.com/localredhead")
                      :personal-avatar "https://media.licdn.com/media/p/6/005/095/364/3fd9ba3.jpg"
                      :confound-email t

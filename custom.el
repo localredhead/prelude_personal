@@ -105,9 +105,21 @@
     ("~/Projects/localredhead.github.io/moleskin/ledger.org.gpg" "~/Projects/localredhead.github.io/moleskin/work.org.gpg" "~/Projects/localredhead.github.io/moleskin/remember.org.gpg")))
  '(org-capture-templates
    (quote
-    (("" "" entry
-      (file+datetree "")
-      "" :jump-to-captured t))))
+    (("n" "Quick note" entry
+      (file+datetree org-default-notes-file)
+      "%? %U" :prepend t)
+     ("t" "TODO" entry
+      (file+datetree org-default-notes-file)
+      (\, log-todo-template)
+      :prepend t :emptylines 1 :immediate-finish t)
+     ("d" "Daily Task" checkitem
+      (file+datetree org-default-notes-file)
+      "%?" :prepend t)
+     ("j" "Journal" entry
+      (file+datetree "ledger.org.gpg" "Journal")
+      "* %? %U" :unnarrowed f))))
+ '(org-capture-use-agenda-date t)
+ '(org-datetree-add-timestamp (quote active))
  '(org-directory "~/Projects/localredhead.github.io/moleskin")
  '(org-export-backends
    (quote
@@ -128,9 +140,9 @@
  '(projectile-switch-project-action (quote projectile-dired))
  '(rbenv-show-active-ruby-in-modeline nil)
  '(redisplay-dont-pause t t)
- '(ring-bell-function (quote ignore))
- '(rspec-use-bundler-when-possible nil)
- '(rspec-use-zeus-when-possible nil)
+ '(ring-bell-function (quote ignore) t)
+ '(rspec-use-bundler-when-possible nil t)
+ '(rspec-use-zeus-when-possible nil t)
  '(ruby-insert-encoding-magic-comment nil)
  '(scroll-conservatively 10000)
  '(scroll-margin 1)
@@ -168,8 +180,8 @@
  '(tramp-encoding-shell "bash" nil (tramp))
  '(tramp-remote-process-environment
    (quote
-    ("TMOUT=0" "LC_CTYPE=''" "TERM=dumb" "INSIDE_EMACS='25.0.50.1,tramp:2.2.13-pre'" "CDPATH=" "HISTORY=" "MAIL=" "MAILCHECK=" "MAILPATH=" "PAGER=cat" "autocorrect=" "correct=" "RBENV_VERSION=2.1.6")) nil (tramp))
- '(tramp-terminal-type "vt100" nil (tramp))
+    ("TMOUT=0" "LC_CTYPE=''" "TERM=dumb" "INSIDE_EMACS='25.0.50.1,tramp:2.2.13-pre'" "CDPATH=" "HISTORY=" "MAIL=" "MAILCHECK=" "MAILPATH=" "PAGER=cat" "autocorrect=" "correct=" "RBENV_VERSION=2.1.6")))
+ '(tramp-terminal-type "vt100")
  '(utf-translate-cjk-mode nil)
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
